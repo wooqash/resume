@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+const path = require("path");
+
 const nextConfig = {
   reactStrictMode: true,
   i18n: {
@@ -9,6 +11,9 @@ const nextConfig = {
     // a non-locale prefixed path e.g. `/hello`
     defaultLocale: 'pl',
     localeDetection: false,
+  },
+  sassOptions: {
+    includePaths: [path.join(__dirname, "styles")],
   },
 }
 

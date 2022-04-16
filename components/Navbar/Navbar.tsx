@@ -1,7 +1,18 @@
-import React from "react";
+import MainMenu from "./MainMenu";
+import ModeSwitcher from "./ModeSwitcher";
+import SocialMenu from "./SocialMenu";
 
-const Navbar = () => {
-  return <div />;
-};
-
-export default Navbar;
+type NavBarProps = {}
+ 
+const NavBar:React.FC<NavBarProps> = () => {
+  return (
+    <nav>
+      <ModeSwitcher />
+      <MainMenu />
+      <SocialMenu />
+    </nav>
+  );
+}
+ 
+ 
+export default NavBar;

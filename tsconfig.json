@@ -19,16 +19,11 @@
     "removeComments": true,
     "importHelpers": true,
     "paths": {
-      "@/components/*": [
-        "components/*"
-      ],
-      "@/styles/*": [
-        "styles/*"
-      ],
-      "@/public/*": [
-        "public/*"
-      ]
-    },
+      "@/components/*": ["components/*"],
+      "@/types/*": ["types/*"],
+      "@/styles/*": ["styles/*"],
+      "@/public/*": ["public/*"]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

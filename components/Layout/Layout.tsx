@@ -11,7 +11,6 @@ const Layout:React.FC<LayoutProps> = ({children}) => {
         <>
             <Navbar />
             <main>{children}</main>
-            {/* <Footer footer={footer} socialMedia={socialMediaLinks} pageContext={pageContext} /> */}
         </>
   );
 }

@@ -1,25 +1,28 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import { useRouter } from 'next/router'
-import styles from '../styles/Home.module.css'
-import { HOME } from '../constants';
-import Layout from '@/components/Layout';
-import Seo from '@/components/Seo';
-import { SeoData } from 'types/seo-data';
+import type { NextPage } from "next";
+import Head from "next/head";
+import Image from "next/image";
+import { useRouter } from "next/router";
+import styles from "../styles/Home.module.css";
+import { HOME } from "../constants";
+import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
+import { useLangContext } from "context/lang.context";
+import { ISeo } from "types/seo";
 
 const Home: NextPage = () => {
-  // console.log('lint-staged test3');
   const router = useRouter();
-  const cLocale = router.locale || 'pl';
-  const seo = HOME[cLocale].seo;
+  const { lang } = useLangContext();
+  // const cLocale = router.locale || 'pl';
+  const seo = HOME[lang].seo;
 
-  console.log(seo);
   return (
     <Layout>
-     <Seo data={seo} />
+      <>
+        {typeof seo !== "string" && <Seo data={seo} />}
+        <h1>Home</h1>
+      </>
     </Layout>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

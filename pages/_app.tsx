@@ -1,8 +1,16 @@
-import '../styles/index.scss'
-import type { AppProps } from 'next/app'
+import "../styles/index.scss";
+import type { AppProps } from "next/app";
+import ThemeProvider from "context/theme.context";
+import LangContext from "context/lang.context";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <ThemeProvider>
+      <LangContext>
+        <Component {...pageProps} />
+      </LangContext>
+    </ThemeProvider>
+  );
 }
 
-export default MyApp
+export default MyApp;

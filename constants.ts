@@ -13,6 +13,7 @@ interface IGlobalData {
 export const DEFAULT_LABELS: IGlobalData = {
   pl: {
     ariaNewTabLabel: "Otwórz w nowej karcie",
+    skipLinkLabel: "Przejdź do treści głównej",
     mainMenu: [
       {
         label: "Home",
@@ -38,9 +39,18 @@ export const DEFAULT_LABELS: IGlobalData = {
         icon: IconType.CONTACT,
       },
     ],
+    socialLinks: [
+      {
+        label: "Home",
+        url: "/",
+        newTab: false,
+        icon: IconType.HOME,
+      },
+    ],
   },
   en: {
     ariaNewTabLabel: "Open in new tab",
+    skipLinkLabel: "Go to main content",
     mainMenu: [
       {
         label: "Home",

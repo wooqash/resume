@@ -1,18 +1,19 @@
 import MainMenu from "./MainMenu";
-import ModeSwitcher from "./ModeSwitcher";
 import SocialMenu from "./SocialMenu";
 
-type NavBarProps = {}
- 
-const NavBar:React.FC<NavBarProps> = () => {
+import style from "./Navbar.module.scss";
+import { useThemeContext } from "context/theme.context";
+
+type NavBarProps = {};
+
+const NavBar: React.FC<NavBarProps> = () => {
+  const { theme } = useThemeContext();
   return (
-    <nav>
-      <ModeSwitcher />
+    <nav className={`${style.nav} ${style[theme]}`}>
       <MainMenu />
       <SocialMenu />
     </nav>
   );
-}
- 
- 
+};
+
 export default NavBar;

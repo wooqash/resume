@@ -1,19 +1,63 @@
 import { ISeo } from "types/seo";
+import { ILink } from "./types/link";
 
-interface Translations {
+interface ITranslations {
   [localization: string]: { [key: string]: ISeo } | { [key: string]: string };
 }
 
-export const DEFAULT_LABELS: Translations = {
+interface IGlobalData {
+  [localization: string]: { [key: string]: string | ILink[] };
+}
+
+export const DEFAULT_LABELS: IGlobalData = {
   pl: {
     ariaNewTabLabel: "Otwórz w nowej karcie",
+    mainMenu: [
+      {
+        label: "Home",
+        url: "/",
+        newTab: false,
+      },
+      {
+        label: "O mnie",
+        url: "/o-mnie",
+        newTab: false,
+      },
+      {
+        label: "Blog",
+        url: "/blog",
+        newTab: false,
+      },
+      {
+        label: "Kontakt",
+        url: "/kontakt",
+        newTab: false,
+      },
+    ],
   },
   en: {
     ariaNewTabLabel: "Open in new tab",
+    mainMenu: [
+      {
+        label: "Home",
+        url: "/",
+        newTab: false,
+      },
+      {
+        label: "About me",
+        url: "/about",
+        newTab: false,
+      },
+      {
+        label: "Contact",
+        url: "/contact",
+        newTab: false,
+      },
+    ],
   },
 };
 
-export const HOME: Translations = {
+export const HOME: ITranslations = {
   pl: {
     seo: {
       metaTitle: "Hello world - PL",
@@ -44,7 +88,7 @@ export const HOME: Translations = {
   },
 };
 
-export const ABOUT: Translations = {
+export const ABOUT: ITranslations = {
   pl: {
     seo: {
       metaTitle: "O mnie",
@@ -75,7 +119,7 @@ export const ABOUT: Translations = {
   },
 };
 
-export const CONTACT: Translations = {
+export const CONTACT: ITranslations = {
   pl: {
     seo: {
       metaTitle: "Kontakt",

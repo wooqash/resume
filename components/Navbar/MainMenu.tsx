@@ -1,47 +1,38 @@
+import { DEFAULT_LABELS } from "../../constants";
 import { useLangContext } from "context/lang.context";
 import Link from "next/link";
+import { ILink } from "@/types/link";
 
 type MainMenuProps = {};
 
 const MainMenu: React.FC<MainMenuProps> = () => {
   const { lang } = useLangContext();
+  const mList = DEFAULT_LABELS[lang].mainMenu;
+
+  const isILinkArr = (list: any): list is ILink[] => {
+    return (
+      list.length > 0 &&
+      typeof list[0].label === "string" &&
+      typeof list[0].url === "string" &&
+      typeof list[0].newTab === "boolean"
+    );
+  };
+
+  const menuList = isILinkArr(mList) ? mList : null;
+
   return (
     <>
-      {lang === "pl" ? (
+      {menuList && (
         <ul>
-          <li>
-            <Link href="/" locale="pl">
-              <a>Home</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/o-mnie" locale="pl">
-              <a>O mnie</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/kontakt" locale="pl">
-              <a>Kontakt</a>
-            </Link>
-          </li>
-        </ul>
-      ) : (
-        <ul>
-          <li>
-            <Link href="/en" locale="en">
-              <a>Home</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/about" locale="en">
-              <a>About</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/contact" locale="en">
-              <a>Contact</a>
-            </Link>
-          </li>
+          {menuList.map((link: ILink) => {
+            return (
+              <li key={`${link.label}_${link.id}`}>
+                <Link href={link.url} locale={lang}>
+                  <a>{link.label}</a>
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       )}
     </>

@@ -1,12 +1,13 @@
 import { ISeo } from "types/seo";
-import { ILink } from "./types/link";
+import { IconType } from "./types/icon";
+import { IMenuLink } from "./types/menu-link";
 
 interface ITranslations {
   [localization: string]: { [key: string]: ISeo } | { [key: string]: string };
 }
 
 interface IGlobalData {
-  [localization: string]: { [key: string]: string | ILink[] };
+  [localization: string]: { [key: string]: string | IMenuLink[] };
 }
 
 export const DEFAULT_LABELS: IGlobalData = {
@@ -17,21 +18,24 @@ export const DEFAULT_LABELS: IGlobalData = {
         label: "Home",
         url: "/",
         newTab: false,
+        icon: IconType.HOME,
       },
       {
         label: "O mnie",
         url: "/o-mnie",
         newTab: false,
+        icon: IconType.ABOUT,
       },
-      {
-        label: "Blog",
-        url: "/blog",
-        newTab: false,
-      },
+      // {
+      //   label: "Blog",
+      //   url: "/blog",
+      //   newTab: false,
+      // },
       {
         label: "Kontakt",
         url: "/kontakt",
         newTab: false,
+        icon: IconType.CONTACT,
       },
     ],
   },
@@ -42,16 +46,19 @@ export const DEFAULT_LABELS: IGlobalData = {
         label: "Home",
         url: "/",
         newTab: false,
+        icon: IconType.HOME,
       },
       {
         label: "About me",
         url: "/about",
         newTab: false,
+        icon: IconType.ABOUT,
       },
       {
         label: "Contact",
         url: "/contact",
         newTab: false,
+        icon: IconType.CONTACT,
       },
     ],
   },

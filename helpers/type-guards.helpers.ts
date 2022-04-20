@@ -1,6 +1,6 @@
-import { ILink } from "@/types/link";
+import { IMenuLink } from "@/types/menu-link";
 
-export const isILinkArr = (list: any): list is ILink[] => {
+export const isIMenuLinkArr = (list: any): list is IMenuLink[] => {
   return (
     list.length > 0 &&
     typeof list[0].label === "string" &&

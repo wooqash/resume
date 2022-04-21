@@ -21,9 +21,11 @@ const MainMenu: React.FC<MainMenuProps> = () => {
             return (
               <li key={`${link.label}_${link.id}`}>
                 <Link href={link.url} locale={lang}>
-                  <a>
-                    {link.label}
+                  <a aria-labelledby={`MenuLabel_${link.id}`}>
                     {link.icon && <Icon type={link.icon} />}
+                    <span role="tooltip" id={`MenuLabel_${link.id}`}>
+                      {link.label}
+                    </span>
                   </a>
                 </Link>
               </li>

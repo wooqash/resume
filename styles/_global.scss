@@ -15,3 +15,19 @@
     width: auto;
   }
 }
+
+.button-and-tooltip {
+  position: relative;
+}
+
+[role="tooltip"] {
+  display: none;
+  position: absolute;
+}
+
+a:hover > [role="tooltip"],
+a:focus > [role="tooltip"],
+button:hover + [role="tooltip"],
+button:focus + [role="tooltip"] {
+  display: block;
+}

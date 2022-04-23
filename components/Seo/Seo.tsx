@@ -2,17 +2,18 @@ import { NextSeo } from "next-seo";
 import { ISeo } from "types/seo";
 
 type SeoProps = {
-  data: ISeo;
+  meta: ISeo;
 };
 
-const Seo: React.FC<SeoProps> = ({ data }) => {
+const Seo: React.FC<SeoProps> = ({ meta }) => {
   return (
     <NextSeo
-      title={data.metaTitle}
-      description={data.metaDescription}
-      noindex={data.preventIndexing}
-      nofollow={data.preventFollowing}
-      canonical={data.cannonicalLink}
+      title={meta.title}
+      titleTemplate={`%s | ${meta.titleSuffix}`}
+      description={meta.description}
+      noindex={meta.preventIndexing}
+      nofollow={meta.preventFollowing}
+      canonical={meta.cannonicalLink}
       // languageAlternates={alternateLangs}
       // openGraph={{
       //   type: data.openGraph?.type,

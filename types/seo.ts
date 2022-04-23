@@ -1,8 +1,8 @@
 export interface ISeo {
-  metaTitle: string;
-  metaTitleSuffix?: string;
-  metaDescription: string;
-  metaKeywords?: string;
+  title: string;
+  titleSuffix?: string;
+  description: string;
+  keywords?: string;
   preventIndexing: boolean;
   preventFollowing: boolean;
   cannonicalLink?: string;

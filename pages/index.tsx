@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
@@ -9,9 +10,20 @@ const Home: NextPage = () => {
   // console.log('lint-staged test3');
   const router = useRouter();
 
+  const seoMeta = {
+    title: "Resume",
+    titleSuffix: "Łukasz Sobola",
+    description: "Witam",
+    preventIndexing: false,
+    preventFollowing: false,
+  };
+
   return (
     <Layout>
-      <h1>Homepage</h1>
+      <>
+        <Seo meta={seoMeta} />
+        <h1>Homepage</h1>
+      </>
     </Layout>
   );
 };

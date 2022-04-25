@@ -1,6 +1,6 @@
-import { IIconType } from "./icon.interface";
+import { IconType } from "./icon.enum";
 import { ILink } from "./link.interface";
 
 export interface IMenuLink extends ILink {
-  icon?: IIconType;
+  icon?: IconType;
 }

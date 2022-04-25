@@ -1,5 +1,5 @@
 import { Icon } from "@chakra-ui/react";
-import { IconType } from "../../types/icon.interface";
+import { IconType } from "@/types/icon.enum";
 import {
   FiHome,
   FiUser,

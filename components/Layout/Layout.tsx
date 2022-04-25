@@ -18,8 +18,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   return (
     <>
-      <LangSwitcher />
-      {/* <ModeSwitcher onLangChange={handleLangChange} /> */}
+      <LangSwitcher onLangChange={handleLangChange} />
+      <ModeSwitcher />
       <Navbar />
       <main>{children}</main>
     </>

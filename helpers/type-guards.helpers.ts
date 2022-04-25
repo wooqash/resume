@@ -1,5 +1,15 @@
 import { ButtonType, IButton } from "@/types/button.interface";
+import { ILink } from "@/types/link.interface";
 import { IMenuLink } from "@/types/menu-link.interface";
+
+export const isILink = (link: any): link is ILink => {
+  return (
+    (typeof link.id === "string" || typeof link.id === "number") &&
+    typeof link.label === "string" &&
+    typeof link.url === "string" &&
+    typeof link.newTab === "boolean"
+  );
+};
 
 export const isIMenuLinkArr = (list: any): list is IMenuLink[] => {
   return (

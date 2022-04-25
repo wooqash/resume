@@ -21,8 +21,8 @@ export const GLOBAL_LABELS: IGlobalData = {
     skipLinkLabel: "Przejdź do treści głównej",
     langSwitcher: {
       id: "LangSwitcher",
-      label: "PL",
-      url: "/",
+      label: "EN",
+      url: "/en",
       newTab: false,
     },
     mainMenu: [
@@ -88,7 +88,7 @@ export const GLOBAL_LABELS: IGlobalData = {
     skipLinkLabel: "Go to main content",
     langSwitcher: {
       id: "LangSwitcher",
-      label: "EN",
+      label: "PL",
       url: "/",
       newTab: false,
     },
@@ -147,9 +147,10 @@ export const GLOBAL_LABELS: IGlobalData = {
   },
 };
 
-export const HOME: ITranslations = {
+export const HOME_LABELS: ITranslations = {
   pl: {
     seo: {
+      id: "seoPL",
       title: "Hello world - PL",
       titleSuffix: "Łukasz Sobola",
       description: "",
@@ -164,6 +165,7 @@ export const HOME: ITranslations = {
   },
   en: {
     seo: {
+      id: "seoEN",
       title: "Hello world - EN",
       titleSuffix: "Łukasz Sobola",
       description: "",

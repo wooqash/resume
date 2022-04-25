@@ -1,4 +1,5 @@
 export interface ISeo {
+  id: string | number;
   title: string;
   titleSuffix?: string;
   description: string;

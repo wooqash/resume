@@ -1,5 +1,6 @@
 import { ButtonType, IButton } from "./types/button.interface";
 import { IconType } from "./types/icon.enum";
+import { ILink } from "./types/link.interface";
 import { IMenuLink } from "./types/menu-link.interface";
 import { ISeo } from "./types/seo.interface";
 import { ISocialLink } from "./types/social-link.interface";
@@ -10,7 +11,7 @@ interface ITranslations {
 
 interface IGlobalData {
   [localization: string]: {
-    [key: string]: string | IMenuLink[] | ISocialLink[] | IButton;
+    [key: string]: string | ILink | IMenuLink[] | ISocialLink[] | IButton;
   };
 }
 
@@ -18,6 +19,12 @@ export const GLOBAL_LABELS: IGlobalData = {
   pl: {
     ariaNewTabLabel: "Otwórz w nowej karcie",
     skipLinkLabel: "Przejdź do treści głównej",
+    langSwitcher: {
+      id: "LangSwitcher",
+      label: "PL",
+      url: "/",
+      newTab: false,
+    },
     mainMenu: [
       {
         id: 1,
@@ -79,6 +86,12 @@ export const GLOBAL_LABELS: IGlobalData = {
   en: {
     ariaNewTabLabel: "Open in new tab",
     skipLinkLabel: "Go to main content",
+    langSwitcher: {
+      id: "LangSwitcher",
+      label: "EN",
+      url: "/",
+      newTab: false,
+    },
     mainMenu: [
       {
         id: 1,

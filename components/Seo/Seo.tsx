@@ -1,5 +1,5 @@
 import { NextSeo } from "next-seo";
-import { ISeo } from "types/seo";
+import { ISeo } from "@/types/seo.interface";
 
 type SeoProps = {
   meta: ISeo;

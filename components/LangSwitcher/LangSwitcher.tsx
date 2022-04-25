@@ -18,11 +18,16 @@ const LangSwitcher: React.FC<LangSwitcherProps> = ({ onLangChange }) => {
   const switchLink = isILink(gLangSwitcher) ? gLangSwitcher : null;
   const ariaNewTabLabel =
     typeof gAriaNewTabLabel === "string" ? gAriaNewTabLabel : "";
+  const nextLocale = switchLink?.label
+    ? switchLink?.label.toLocaleLowerCase()
+    : "";
+
+  console.log(nextLocale, lang);
 
   return (
     <>
       {switchLink && (
-        <NextLink href={switchLink.url} passHref locale={lang}>
+        <NextLink href={switchLink.url} passHref locale={nextLocale}>
           <Link>
             <>
               {switchLink.label}

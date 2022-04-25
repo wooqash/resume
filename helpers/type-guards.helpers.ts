@@ -1,6 +1,7 @@
 import { ButtonType, IButton } from "@/types/button.interface";
 import { ILink } from "@/types/link.interface";
 import { IMenuLink } from "@/types/menu-link.interface";
+import { ISeo } from "@/types/seo.interface";
 
 export const isILink = (link: any): link is ILink => {
   return (
@@ -8,6 +9,20 @@ export const isILink = (link: any): link is ILink => {
     typeof link.label === "string" &&
     typeof link.url === "string" &&
     typeof link.newTab === "boolean"
+  );
+};
+
+export const isISeo = (link: any): link is ISeo => {
+  return (
+    (typeof link.id === "string" || typeof link.id === "number") &&
+    typeof link.title === "string" &&
+    (typeof link.titleSuffix === "string" ||
+      typeof link.titleSuffix === "undefined") &&
+    typeof link.description === "string" &&
+    (typeof link.keywords === "string" ||
+      typeof link.keywords === "undefined") &&
+    typeof link.preventIndexing === "boolean" &&
+    typeof link.preventFollowing === "boolean"
   );
 };
 

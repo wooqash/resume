@@ -14,7 +14,7 @@ interface IGlobalData {
   };
 }
 
-export const DEFAULT_LABELS: IGlobalData = {
+export const GLOBAL_LABELS: IGlobalData = {
   pl: {
     ariaNewTabLabel: "Otwórz w nowej karcie",
     skipLinkLabel: "Przejdź do treści głównej",
@@ -131,5 +131,98 @@ export const DEFAULT_LABELS: IGlobalData = {
         icon: IconType.LINKEDIN,
       },
     ],
+  },
+};
+
+export const HOME: ITranslations = {
+  pl: {
+    seo: {
+      title: "Hello world - PL",
+      titleSuffix: "Łukasz Sobola",
+      description: "",
+      keywords: "",
+      preventIndexing: false,
+      preventFollowing: false,
+      cannonicalLink: "",
+      // shareImage: '',
+      // openGraph: '',
+      // twitterCard: '',
+    },
+  },
+  en: {
+    seo: {
+      title: "Hello world - EN",
+      titleSuffix: "Łukasz Sobola",
+      description: "",
+      keywords: "",
+      preventIndexing: false,
+      preventFollowing: false,
+      cannonicalLink: "",
+      // shareImage: '',
+      // openGraph: '',
+      // twitterCard: '',
+    },
+  },
+};
+
+export const ABOUT: ITranslations = {
+  pl: {
+    seo: {
+      title: "O mnie",
+      titleSuffix: "Łukasz Sobola",
+      description: "",
+      keywords: "",
+      preventIndexing: false,
+      preventFollowing: false,
+      cannonicalLink: "",
+      // shareImage: '',
+      // openGraph: '',
+      // twitterCard: '',
+    },
+  },
+  en: {
+    seo: {
+      title: "About - EN",
+      titleSuffix: "Łukasz Sobola",
+      description: "",
+      keywords: "",
+      preventIndexing: false,
+      preventFollowing: false,
+      cannonicalLink: "",
+      // shareImage: '',
+      // openGraph: '',
+      // twitterCard: '',
+    },
+  },
+};
+
+export const CONTACT: ITranslations = {
+  pl: {
+    seo: {
+      title: "Kontakt",
+      titleSuffix: "Łukasz Sobola",
+      description: "",
+      keywords: "",
+      preventIndexing: false,
+      preventFollowing: false,
+      cannonicalLink: "",
+      // shareImage: '',
+      // openGraph: '',
+      // twitterCard: '',
+    },
+  },
+  en: {
+    seo: {
+      title: "Contact",
+      titleSuffix: "Łukasz Sobola",
+      description: "",
+      keywords: "",
+      preventIndexing: false,
+      preventFollowing: false,
+      cannonicalLink: "",
+      // shareImage: '',
+      // openGraph: '',
+      // twitterCard: '',
+    },
   },
 };

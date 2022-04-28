@@ -1,6 +1,6 @@
 import { ButtonType, IButton } from "@/types/button.interface";
-import { ILink } from "@/types/link.interface";
-import { IMenuLink } from "@/types/menu-link.interface";
+import { IconType } from "@/types/icon.enum";
+import { ILink, ILinkWithIcon } from "@/types/link.interface";
 import { ISeo } from "@/types/seo.interface";
 
 export const isILink = (link: any): link is ILink => {
@@ -9,6 +9,24 @@ export const isILink = (link: any): link is ILink => {
     typeof link.label === "string" &&
     typeof link.url === "string" &&
     typeof link.newTab === "boolean"
+  );
+};
+
+export const isILinkWithIcon = (link: any): link is ILinkWithIcon => {
+  return (
+    (typeof link.id === "string" || typeof link.id === "number") &&
+    typeof link.label === "string" &&
+    typeof link.url === "string" &&
+    typeof link.newTab === "boolean" &&
+    (link.icon === IconType.ABOUT ||
+      link.icon === IconType.CONTACT ||
+      link.icon === IconType.FACEBOOK ||
+      link.icon === IconType.HOME ||
+      link.icon === IconType.INSTAGRAM ||
+      link.icon === IconType.LINKEDIN ||
+      link.icon === IconType.PORTFOLIO ||
+      link.icon === IconType.SOCIAL ||
+      link.icon === IconType.TWITTER)
   );
 };
 
@@ -23,16 +41,6 @@ export const isISeo = (link: any): link is ISeo => {
       typeof link.keywords === "undefined") &&
     typeof link.preventIndexing === "boolean" &&
     typeof link.preventFollowing === "boolean"
-  );
-};
-
-export const isIMenuLinkArr = (list: any): list is IMenuLink[] => {
-  return (
-    list &&
-    list.length > 0 &&
-    typeof list[0].label === "string" &&
-    typeof list[0].url === "string" &&
-    typeof list[0].newTab === "boolean"
   );
 };
 

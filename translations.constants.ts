@@ -1,9 +1,7 @@
 import { ButtonType, IButton } from "./types/button.interface";
 import { IconType } from "./types/icon.enum";
-import { ILink } from "./types/link.interface";
-import { IMenuLink } from "./types/menu-link.interface";
+import { ILink, ILinkWithIcon } from "./types/link.interface";
 import { ISeo } from "./types/seo.interface";
-import { ISocialLink } from "./types/social-link.interface";
 
 interface ITranslations {
   [localization: string]: { [key: string]: ISeo } | { [key: string]: string };
@@ -11,7 +9,7 @@ interface ITranslations {
 
 interface IGlobalData {
   [localization: string]: {
-    [key: string]: string | ILink | IMenuLink[] | ISocialLink[] | IButton;
+    [key: string]: string | ILink | ILinkWithIcon[] | IButton;
   };
 }
 
@@ -30,6 +28,8 @@ export const GLOBAL_LABELS: IGlobalData = {
         id: 1,
         label: "Home",
         url: "/",
+        "aria-tooltip": "Strona główna",
+        "aria-description": "Nasza Strona główna",
         newTab: false,
         icon: IconType.HOME,
       },

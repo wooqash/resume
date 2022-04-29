@@ -1,7 +1,13 @@
+import MainMenu from "./MainMenu";
+
 type NavbarProps = {};
 
 const Navbar: React.FC<NavbarProps> = () => {
-  return <div>Navbar</div>;
+  return (
+    <>
+      <MainMenu />
+    </>
+  );
 };
 
 export default Navbar;

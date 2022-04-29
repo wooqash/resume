@@ -184,6 +184,7 @@ export const HOME_LABELS: ITranslations = {
 export const ABOUT: ITranslations = {
   pl: {
     seo: {
+      id: "seoAboutPL",
       title: "O mnie",
       titleSuffix: "Łukasz Sobola",
       description: "",
@@ -198,6 +199,7 @@ export const ABOUT: ITranslations = {
   },
   en: {
     seo: {
+      id: "seoAboutEN",
       title: "About - EN",
       titleSuffix: "Łukasz Sobola",
       description: "",
@@ -215,6 +217,7 @@ export const ABOUT: ITranslations = {
 export const CONTACT: ITranslations = {
   pl: {
     seo: {
+      id: "seoContactPL",
       title: "Kontakt",
       titleSuffix: "Łukasz Sobola",
       description: "",
@@ -229,6 +232,7 @@ export const CONTACT: ITranslations = {
   },
   en: {
     seo: {
+      id: "seoContactEN",
       title: "Contact",
       titleSuffix: "Łukasz Sobola",
       description: "",

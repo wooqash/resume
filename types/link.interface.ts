@@ -7,6 +7,8 @@ export interface ILink {
   "aria-description"?: string;
   url: string;
   newTab: boolean;
+  role?: string;
+  tabIndex?: number;
 }
 
 export interface ILinkWithIcon extends ILink {

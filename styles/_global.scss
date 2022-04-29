@@ -1,0 +1,22 @@
+[role="tooltip"] {
+  display: none;
+}
+
+button:hover + [role="tooltip"],
+button:focus + [role="tooltip"],
+a:hover + [role="tooltip"],
+a:focus + [role="tooltip"] {
+  display: block;
+}
+
+.tooltip-container {
+  position: relative;
+}
+
+.tooltip-container [role="tooltip"] {
+  position: absolute;
+  right: 50%;
+  top: -100%;
+  transform: translateX(25%);
+  width: max-content;
+}

@@ -37,6 +37,7 @@ export const GLOBAL_LABELS: IGlobalData = {
         id: 2,
         label: "O mnie",
         url: "/o-mnie",
+        "aria-tooltip": "strona o mnie",
         newTab: false,
         icon: IconType.ABOUT,
       },

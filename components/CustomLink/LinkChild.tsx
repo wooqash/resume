@@ -32,15 +32,21 @@ const LinkChild = forwardRef<HTMLAnchorElement, LinkChildProps>(
     const target = newTab ? { target: "_blank" } : { target: "_self" };
     const rel = !isInternalLink && newTab ? { rel: "noopener noreferrer" } : {};
     const roleAttr = role ? { role } : {};
+
     const ariaLabelledbyIdAttr = id && labelledby ? `AriaLabelledBy_${id}` : "";
     const ariaLabelledbyAttr = ariaLabelledbyIdAttr
       ? { "aria-labelledby": ariaLabelledbyIdAttr }
-      : {};
+      : null;
     const ariaDescribedbyIdAttr =
       id && describedby ? `AriaDescribedBy_${id}` : "";
     const ariaDescribedbyAttr = ariaDescribedbyIdAttr
       ? { "aria-describedby": ariaDescribedbyIdAttr }
-      : {};
+      : null;
+    const ariaIdAttr =
+      ariaDescribedbyAttr && ariaLabelledbyAttr
+        ? ariaDescribedbyAttr
+        : ariaLabelledbyAttr || {};
+
     const tabIndexAttr = tabIndex || {};
     const refAttr = ref ? { ref: ref } : {};
 
@@ -52,8 +58,7 @@ const LinkChild = forwardRef<HTMLAnchorElement, LinkChildProps>(
         {...target}
         {...rel}
         {...roleAttr}
-        {...ariaLabelledbyAttr}
-        {...ariaDescribedbyAttr}
+        {...ariaIdAttr}
         {...tabIndexAttr}
         {...refAttr}
         onClick={handleClick}

@@ -18,9 +18,9 @@ const LinkWithTooltip: React.FC<LinkWithTooltipProps> = (props) => {
     id && describedby ? `AriaDescribedBy_${id}` : "";
   const idAttr =
     describedby && labelledby
-      ? ariaDescribedbyIdAttr
+      ? { id: ariaDescribedbyIdAttr }
       : labelledby
-      ? ariaLabelledbyIdAttr
+      ? { id: ariaLabelledbyIdAttr }
       : {};
 
   return (

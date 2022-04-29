@@ -1,9 +1,8 @@
-import { VisuallyHidden } from "@chakra-ui/react";
 import { KeyboardEvent, MouseEvent } from "react";
 import { useLanguageContext } from "contexts/language";
-import { GLOBAL_LABELS } from "translations.constants";
 import { isILink } from "helpers/type-guards.helpers";
 import CustomLink from "../CustomLink";
+import { GLOBAL_LABELS } from "translations.constants";
 
 type LangSwitcherProps = {};
 
@@ -25,20 +24,17 @@ const LangSwitcher: React.FC<LangSwitcherProps> = () => {
     lang === "pl" ? changeLang("en") : changeLang("pl");
   };
 
+  console.log(switchLink);
+
   return (
     <>
       {switchLink && (
         <CustomLink
-          url={switchLink.url}
+          link={switchLink}
           locale={nextLocale}
           handleClick={handleLangChange}
         >
-          <>
-            {switchLink.label && <span>{switchLink.label}</span>}
-            {ariaNewTabLabel && switchLink.newTab && (
-              <VisuallyHidden>{ariaNewTabLabel}</VisuallyHidden>
-            )}
-          </>
+          {switchLink.label && <span>{switchLink.label}</span>}
         </CustomLink>
       )}
     </>

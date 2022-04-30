@@ -1,17 +1,17 @@
 import { ILink, ILinkWithIcon } from "@/types/link.interface";
 import { ReactChild } from "react";
 
-type LinkWithTooltipProps = {
+type TooltipLinkWrapperProps = {
   children: ReactChild;
   link: ILink | ILinkWithIcon;
 };
 
-const LinkWithTooltip: React.FC<LinkWithTooltipProps> = (props) => {
+const TooltipLinkWrapper: React.FC<TooltipLinkWrapperProps> = (props) => {
   const { link, children } = props;
   const {
     id,
-    "aria-tooltip": labelledby,
-    "aria-description": describedby,
+    "aria-labelledby": labelledby,
+    "aria-describedby": describedby,
   } = link;
   const ariaLabelledbyIdAttr = id && labelledby ? `AriaLabelledBy_${id}` : "";
   const ariaDescribedbyIdAttr =
@@ -35,4 +35,4 @@ const LinkWithTooltip: React.FC<LinkWithTooltipProps> = (props) => {
   );
 };
 
-export default LinkWithTooltip;
+export default TooltipLinkWrapper;

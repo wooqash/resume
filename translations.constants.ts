@@ -20,36 +20,44 @@ export const GLOBAL_LABELS: IGlobalData = {
     langSwitcher: {
       id: "LangSwitcher",
       label: "EN",
-      url: "/en",
+      href: "/en",
       newTab: false,
     },
     mainMenu: [
       {
-        id: 1,
+        id: "1",
         label: "Home",
-        url: "/",
-        "aria-tooltip": "Strona główna",
-        "aria-description": "Nasza Strona główna",
+        href: "/",
+        "aria-labelledby": "Strona główna",
+        "aria-describedby": "Nasza Strona główna",
         newTab: false,
         icon: IconType.HOME,
       },
       {
-        id: 2,
+        id: "2",
         label: "O mnie",
-        url: "/o-mnie",
-        "aria-tooltip": "strona o mnie",
+        href: "/o-mnie",
+        "aria-labelledby": "strona o mnie",
         newTab: false,
         icon: IconType.ABOUT,
       },
+      {
+        id: "3",
+        label: "Portfolio",
+        href: "/portfolio",
+        "aria-labelledby": "moje projekty",
+        newTab: false,
+        icon: IconType.PORTFOLIO,
+      },
       // {
       //   label: "Blog",
-      //   url: "/blog",
+      //   href: "/blog",
       //   newTab: false,
       // },
       {
-        id: 3,
+        id: "4",
         label: "Kontakt",
-        url: "/kontakt",
+        href: "/kontakt",
         newTab: false,
         icon: IconType.CONTACT,
       },
@@ -64,21 +72,21 @@ export const GLOBAL_LABELS: IGlobalData = {
       {
         id: "sl1",
         label: "",
-        url: "https://facebook.com",
+        href: "https://facebook.com",
         newTab: true,
         icon: IconType.FACEBOOK,
       },
       {
         id: "sl2",
         label: "",
-        url: "https://instagram.com",
+        href: "https://instagram.com",
         newTab: true,
         icon: IconType.INSTAGRAM,
       },
       {
         id: "sl3",
         label: "",
-        url: "https://linkedin.com",
+        href: "https://linkedin.com",
         newTab: true,
         icon: IconType.LINKEDIN,
       },
@@ -90,28 +98,36 @@ export const GLOBAL_LABELS: IGlobalData = {
     langSwitcher: {
       id: "LangSwitcher",
       label: "PL",
-      url: "/",
+      href: "/",
       newTab: false,
     },
     mainMenu: [
       {
-        id: 1,
+        id: "1",
         label: "Home",
-        url: "/",
+        href: "/",
         newTab: false,
         icon: IconType.HOME,
       },
       {
-        id: 2,
+        id: "2",
         label: "About me",
-        url: "/about",
+        href: "/about",
         newTab: false,
         icon: IconType.ABOUT,
       },
       {
-        id: 3,
+        id: "3",
+        label: "Portfolio",
+        href: "/portfolio",
+        "aria-labelledby": "moje projekty",
+        newTab: false,
+        icon: IconType.PORTFOLIO,
+      },
+      {
+        id: "4",
         label: "Contact",
-        url: "/contact",
+        href: "/contact",
         newTab: false,
         icon: IconType.CONTACT,
       },
@@ -126,21 +142,21 @@ export const GLOBAL_LABELS: IGlobalData = {
       {
         id: "sl1",
         label: "",
-        url: "https://facebook.com",
+        href: "https://facebook.com",
         newTab: true,
         icon: IconType.FACEBOOK,
       },
       {
         id: "sl2",
         label: "",
-        url: "https://instagram.com",
+        href: "https://instagram.com",
         newTab: true,
         icon: IconType.INSTAGRAM,
       },
       {
         id: "sl3",
         label: "",
-        url: "https://linkedin.com",
+        href: "https://linkedin.com",
         newTab: true,
         icon: IconType.LINKEDIN,
       },
@@ -181,7 +197,7 @@ export const HOME_LABELS: ITranslations = {
   },
 };
 
-export const ABOUT: ITranslations = {
+export const ABOUT_LABELS: ITranslations = {
   pl: {
     seo: {
       id: "seoAboutPL",
@@ -214,7 +230,40 @@ export const ABOUT: ITranslations = {
   },
 };
 
-export const CONTACT: ITranslations = {
+export const PORTFOLIO_LABELS: ITranslations = {
+  pl: {
+    seo: {
+      id: "seoPortfolioPL",
+      title: "Portfolio",
+      titleSuffix: "Łukasz Sobola",
+      description: "",
+      keywords: "",
+      preventIndexing: false,
+      preventFollowing: false,
+      cannonicalLink: "",
+      // shareImage: '',
+      // openGraph: '',
+      // twitterCard: '',
+    },
+  },
+  en: {
+    seo: {
+      id: "seoPortfolioEN",
+      title: "Portfolio - EN",
+      titleSuffix: "Łukasz Sobola",
+      description: "",
+      keywords: "",
+      preventIndexing: false,
+      preventFollowing: false,
+      cannonicalLink: "",
+      // shareImage: '',
+      // openGraph: '',
+      // twitterCard: '',
+    },
+  },
+};
+
+export const CONTACT_LABELS: ITranslations = {
   pl: {
     seo: {
       id: "seoContactPL",

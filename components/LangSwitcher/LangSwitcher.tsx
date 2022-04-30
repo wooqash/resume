@@ -24,8 +24,6 @@ const LangSwitcher: React.FC<LangSwitcherProps> = () => {
     lang === "pl" ? changeLang("en") : changeLang("pl");
   };
 
-  console.log(switchLink);
-
   return (
     <>
       {switchLink && (

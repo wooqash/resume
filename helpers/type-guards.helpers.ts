@@ -5,18 +5,18 @@ import { ISeo } from "@/types/seo.interface";
 
 export const isILink = (link: any): link is ILink => {
   return (
-    (typeof link.id === "string" || typeof link.id === "number") &&
+    (typeof link.id === "string" || typeof link.id === "undefined") &&
     typeof link.label === "string" &&
-    typeof link.url === "string" &&
+    typeof link.href === "string" &&
     typeof link.newTab === "boolean"
   );
 };
 
 export const isILinkWithIcon = (link: any): link is ILinkWithIcon => {
   return (
-    (typeof link.id === "string" || typeof link.id === "number") &&
+    (typeof link.id === "string" || typeof link.id === "undefined") &&
     typeof link.label === "string" &&
-    typeof link.url === "string" &&
+    typeof link.href === "string" &&
     typeof link.newTab === "boolean" &&
     (link.icon === IconType.ABOUT ||
       link.icon === IconType.CONTACT ||

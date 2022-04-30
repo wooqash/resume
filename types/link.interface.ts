@@ -1,14 +1,9 @@
 import { IconType } from "./icon.enum";
+import { AnchorHTMLAttributes } from "react";
 
-export interface ILink {
-  id: string | number;
+export interface ILink extends AnchorHTMLAttributes<HTMLAnchorElement> {
   label: string;
-  "aria-tooltip"?: string;
-  "aria-description"?: string;
-  url: string;
   newTab: boolean;
-  role?: string;
-  tabIndex?: number;
 }
 
 export interface ILinkWithIcon extends ILink {

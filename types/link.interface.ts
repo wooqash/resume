@@ -7,5 +7,5 @@ export interface ILink extends AnchorHTMLAttributes<HTMLAnchorElement> {
 }
 
 export interface ILinkWithIcon extends ILink {
-  icon?: IconType;
+  icon: IconType;
 }

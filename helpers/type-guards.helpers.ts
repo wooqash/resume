@@ -1,6 +1,7 @@
 import { ButtonType, IButton } from "@/types/button.interface";
 import { IconType } from "@/types/icon.enum";
 import { ILink, ILinkWithIcon } from "@/types/link.interface";
+import { IMenu } from "@/types/menu.interface";
 import { ISeo } from "@/types/seo.interface";
 
 export const isILink = (link: any): link is ILink => {
@@ -28,6 +29,10 @@ export const isILinkWithIcon = (link: any): link is ILinkWithIcon => {
       link.icon === IconType.SOCIAL ||
       link.icon === IconType.TWITTER)
   );
+};
+
+export const isIMenu = (link: any): link is IMenu => {
+  return Array.isArray(link.items) && isILinkWithIcon(link.items[0]);
 };
 
 export const isISeo = (link: any): link is ISeo => {

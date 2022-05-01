@@ -1,6 +1,7 @@
-import { ButtonType, IButton } from "./types/button.interface";
+import { ButtonStyleType, IButton } from "./types/button.interface";
 import { IconType } from "./types/icon.enum";
 import { ILink, ILinkWithIcon } from "./types/link.interface";
+import { IMenu } from "./types/menu.interface";
 import { ISeo } from "./types/seo.interface";
 
 interface ITranslations {
@@ -9,7 +10,7 @@ interface ITranslations {
 
 interface IGlobalData {
   [localization: string]: {
-    [key: string]: string | ILink | ILinkWithIcon[] | IButton;
+    [key: string]: string | ILink | ILinkWithIcon[] | IMenu | IButton;
   };
 }
 
@@ -23,74 +24,86 @@ export const GLOBAL_LABELS: IGlobalData = {
       href: "/en",
       newTab: false,
     },
-    mainMenu: [
-      {
-        id: "1",
-        label: "Home",
-        href: "/",
-        "aria-labelledby": "Strona główna",
-        "aria-describedby": "Nasza Strona główna",
-        newTab: false,
-        icon: IconType.HOME,
-      },
-      {
-        id: "2",
-        label: "O mnie",
-        href: "/o-mnie",
-        "aria-labelledby": "strona o mnie",
-        newTab: false,
-        icon: IconType.ABOUT,
-      },
-      {
-        id: "3",
-        label: "Portfolio",
-        href: "/portfolio",
-        "aria-labelledby": "moje projekty",
-        newTab: false,
-        icon: IconType.PORTFOLIO,
-      },
-      // {
-      //   label: "Blog",
-      //   href: "/blog",
-      //   newTab: false,
-      // },
-      {
-        id: "4",
-        label: "Kontakt",
-        href: "/kontakt",
-        newTab: false,
-        icon: IconType.CONTACT,
-      },
-    ],
-    socialButton: {
-      id: "SocialLinksDesc",
-      label: "Linki do social mediów",
-      "aria-description": "Sprawdź moje social media",
-      type: ButtonType.PRIMARY,
+    mainMenu: {
+      items: [
+        {
+          id: "1",
+          label: "Home",
+          href: "/",
+          "aria-labelledby": "Strona główna",
+          "aria-describedby": "Nasza Strona główna",
+          newTab: false,
+          icon: IconType.HOME,
+        },
+        {
+          id: "2",
+          label: "O mnie",
+          href: "/o-mnie",
+          "aria-labelledby": "strona o mnie",
+          newTab: false,
+          icon: IconType.ABOUT,
+        },
+        {
+          id: "3",
+          label: "Portfolio",
+          href: "/portfolio",
+          "aria-labelledby": "moje projekty",
+          newTab: false,
+          icon: IconType.PORTFOLIO,
+        },
+        // {
+        //   label: "Blog",
+        //   href: "/blog",
+        //   newTab: false,
+        // },
+        {
+          id: "4",
+          label: "Kontakt",
+          href: "/kontakt",
+          newTab: false,
+          icon: IconType.CONTACT,
+        },
+      ],
     },
-    socialLinks: [
-      {
-        id: "sl1",
-        label: "",
-        href: "https://facebook.com",
-        newTab: true,
-        icon: IconType.FACEBOOK,
+
+    socialLinks: {
+      button: {
+        id: "SocialLinksDesc",
+        label: "Linki do social mediów",
+        "aria-labelledby": "Sprawdź moje social media",
+        icon: IconType.SOCIAL,
       },
-      {
-        id: "sl2",
-        label: "",
-        href: "https://instagram.com",
-        newTab: true,
-        icon: IconType.INSTAGRAM,
-      },
-      {
-        id: "sl3",
-        label: "",
-        href: "https://linkedin.com",
-        newTab: true,
-        icon: IconType.LINKEDIN,
-      },
-    ],
+      items: [
+        {
+          id: "sl1",
+          label: "",
+          href: "https://facebook.com",
+          newTab: true,
+          icon: IconType.FACEBOOK,
+        },
+        {
+          id: "sl2",
+          label: "",
+          href: "https://instagram.com",
+          newTab: true,
+          icon: IconType.INSTAGRAM,
+        },
+        {
+          id: "sl3",
+          label: "",
+          href: "https://linkedin.com",
+          newTab: true,
+          icon: IconType.LINKEDIN,
+        },
+        {
+          id: "sl4",
+          label: "",
+          href: "https://twitter.com",
+          newTab: true,
+          icon: IconType.TWITTER,
+        },
+      ],
+    },
   },
   en: {
     ariaNewTabLabel: "Open in new tab",
@@ -101,66 +114,77 @@ export const GLOBAL_LABELS: IGlobalData = {
       href: "/",
       newTab: false,
     },
-    mainMenu: [
-      {
-        id: "1",
-        label: "Home",
-        href: "/",
-        newTab: false,
-        icon: IconType.HOME,
-      },
-      {
-        id: "2",
-        label: "About me",
-        href: "/about",
-        newTab: false,
-        icon: IconType.ABOUT,
-      },
-      {
-        id: "3",
-        label: "Portfolio",
-        href: "/portfolio",
-        "aria-labelledby": "moje projekty",
-        newTab: false,
-        icon: IconType.PORTFOLIO,
-      },
-      {
-        id: "4",
-        label: "Contact",
-        href: "/contact",
-        newTab: false,
-        icon: IconType.CONTACT,
-      },
-    ],
-    socialButton: {
-      id: "SocialLinksDesc",
-      label: "Social links",
-      "aria-description": "Check my social media",
-      type: ButtonType.PRIMARY,
+    mainMenu: {
+      items: [
+        {
+          id: "1",
+          label: "Home",
+          href: "/",
+          newTab: false,
+          icon: IconType.HOME,
+        },
+        {
+          id: "2",
+          label: "About me",
+          href: "/about",
+          newTab: false,
+          icon: IconType.ABOUT,
+        },
+        {
+          id: "3",
+          label: "Portfolio",
+          href: "/portfolio",
+          "aria-labelledby": "moje projekty",
+          newTab: false,
+          icon: IconType.PORTFOLIO,
+        },
+        {
+          id: "4",
+          label: "Contact",
+          href: "/contact",
+          newTab: false,
+          icon: IconType.CONTACT,
+        },
+      ],
     },
-    socialLinks: [
-      {
-        id: "sl1",
-        label: "",
-        href: "https://facebook.com",
-        newTab: true,
-        icon: IconType.FACEBOOK,
+    socialLinks: {
+      button: {
+        id: "SocialLinksDesc",
+        label: "Social links",
+        "aria-labelledby": "Check my social media",
+        icon: IconType.SOCIAL,
       },
-      {
-        id: "sl2",
-        label: "",
-        href: "https://instagram.com",
-        newTab: true,
-        icon: IconType.INSTAGRAM,
-      },
-      {
-        id: "sl3",
-        label: "",
-        href: "https://linkedin.com",
-        newTab: true,
-        icon: IconType.LINKEDIN,
-      },
-    ],
+      items: [
+        {
+          id: "sl1",
+          label: "",
+          href: "https://facebook.com",
+          newTab: true,
+          icon: IconType.FACEBOOK,
+        },
+        {
+          id: "sl2",
+          label: "",
+          href: "https://instagram.com",
+          newTab: true,
+          icon: IconType.INSTAGRAM,
+        },
+        {
+          id: "sl3",
+          label: "",
+          href: "https://linkedin.com",
+          newTab: true,
+          icon: IconType.LINKEDIN,
+        },
+        {
+          id: "sl4",
+          label: "",
+          href: "https://twitter.com",
+          newTab: true,
+          icon: IconType.TWITTER,
+        },
+      ],
+    },
   },
 };
 

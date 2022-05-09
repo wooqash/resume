@@ -1,9 +1,16 @@
 import NextLink from "next/link";
 import { Heading, VStack, Text, Button, Icon, Box } from "@chakra-ui/react";
 import { FiArrowRight } from "react-icons/fi";
+import { useLanguageContext } from "contexts/language";
+import { HOME_LABELS } from "translations.constants";
+import { isIIntro } from "helpers/type-guards.helpers";
 type IntroProps = {};
 
 const Intro: React.FC<IntroProps> = (props) => {
+  const { lang } = useLanguageContext();
+  const pageTrans = HOME_LABELS[lang].intro;
+  const intro = isIIntro(pageTrans) ? pageTrans : null;
+
   return (
     <Box
       maxW={{ base: "550px", lg: "66.66666667%" }}
@@ -17,23 +24,24 @@ const Intro: React.FC<IntroProps> = (props) => {
         m="0 auto"
         textAlign={{ base: "center", lg: "left" }}
       >
-        <Heading textTransform="uppercase">
-          <Box as="p" color="teal.600">
-            Łukasz Sobola
-          </Box>
-          Front-end developer
-        </Heading>
-        <Text>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus
-          pariatur perferendis deserunt nemo, est at rerum fuga iure laboriosam
-          dignissimos! Voluptas eligendi libero sint explicabo cum et
-          praesentium sed quisquam.
-        </Text>
-        <NextLink href="/o-mnie" locale="pl" passHref>
-          <Button as="a" rightIcon={<Icon as={FiArrowRight} />}>
-            więcej o mnie
-          </Button>
-        </NextLink>
+        {intro?.title && (
+          <Heading textTransform="uppercase">
+            {intro?.titlePrefix && (
+              <Box as="p" color="teal.600">
+                {intro?.titlePrefix}
+              </Box>
+            )}
+            {intro?.title}
+          </Heading>
+        )}
+        {intro?.introText && <Text>{intro?.introText}</Text>}
+        {intro?.moreBtn && intro?.moreBtn.href && (
+          <NextLink href={intro?.moreBtn.href} locale={lang} passHref>
+            <Button as="a" rightIcon={<Icon as={FiArrowRight} />}>
+              {intro?.moreBtn.label}
+            </Button>
+          </NextLink>
+        )}
       </VStack>
     </Box>
   );

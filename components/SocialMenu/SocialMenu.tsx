@@ -26,7 +26,6 @@ const SocialMenu: React.FC<SocialMenuProps> = () => {
         as={IconButton}
         aria-label="Options"
         icon={<Icons type={IconType.SOCIAL} />}
-        variant="ghost"
       />
       <MenuList
         display="flex"

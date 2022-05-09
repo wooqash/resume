@@ -10,8 +10,6 @@ type LayoutProps = {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
-      <LangSwitcher />
-      <ModeSwitcher />
       <Navbar />
       <main>{children}</main>
     </>

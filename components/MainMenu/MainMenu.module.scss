@@ -1,0 +1,114 @@
+$dimond-size: 40px;
+$dimond-color: var(--chakra-colors-teal-600);
+$dimond-color-active: var(--chakra-colors-teal-700);
+$dimond-color-text: var(--chakra-colors-whiteAlpha-900);
+$dimond-dark-color-text: var(--chakra-colors-gray-800);
+
+.list {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+
+  @media (min-width: 62em) {
+    flex-direction: column;
+  }
+
+  &__item {
+    margin: 1rem 0;
+    position: relative;
+    width: $dimond-size;
+
+    a {
+      background-color: $dimond-color;
+      border-radius: 5px;
+      color: $dimond-color-text;
+      display: block;
+      font-weight: 600;
+      height: $dimond-size;
+      line-height: $dimond-size;
+      text-align: center;
+
+      &:hover,
+      &:focus {
+        background-color: $dimond-color-active;
+
+        .item__label {
+          background-color: $dimond-color-active;
+          border-radius: 5px 0 0 5px;
+          opacity: 1;
+          right: 30px;
+          transform: rotate(0deg);
+          transition: background-color 0.3s ease-out, right 0.3s 0.3s ease-out,
+            opacity 0.3s 0.5s ease-out;
+        }
+
+        .item__icon {
+          transform: rotate(0deg);
+        }
+      }
+
+      &:focus {
+        outline: 2px solid transparent;
+        outline-color: var(--chakra-colors-teal-400);
+      }
+
+      @media (min-width: 62em) {
+        transform: rotate(45deg);
+        transition: transform 0.5s ease-out;
+
+        &:hover,
+        &:focus {
+          transform: rotate(0deg);
+        }
+      }
+    }
+
+    @media (min-width: 62em) {
+      margin: 1.5rem 0;
+    }
+  }
+
+  &--dark {
+    .list__item a {
+      color: $dimond-dark-color-text;
+    }
+  }
+}
+
+.item {
+  &__label {
+    display: none;
+    font-weight: bold;
+    font-family: Poppins, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol", sans-serif;
+    height: 40px;
+    line-height: 40px;
+    opacity: 0;
+    padding: 0 20px;
+    position: absolute;
+    right: 0;
+    text-transform: uppercase;
+    top: 0;
+    transition: background-color 0.3s 0.5s ease-out, right 0.3s ease-out,
+      opacity 0.3s ease-out;
+    white-space: nowrap;
+    z-index: -1;
+    @media (min-width: 62em) {
+      display: inline-block;
+    }
+  }
+
+  &__icon {
+    @media (min-width: 62em) {
+      left: 0;
+      transform: rotate(-45deg);
+      transition: transform 0.5s ease-out;
+      margin: 0 auto;
+      position: absolute;
+      right: 0;
+      text-align: center;
+    }
+  }
+}

@@ -1,11 +1,12 @@
 import { ButtonStyleType, IButton } from "./types/button.interface";
 import { IconType } from "./types/icon.enum";
+import { IIntro } from "./types/intro.interface";
 import { ILink, ILinkWithIcon } from "./types/link.interface";
 import { IMenu } from "./types/menu.interface";
 import { ISeo } from "./types/seo.interface";
 
 interface ITranslations {
-  [localization: string]: { [key: string]: ISeo } | { [key: string]: string };
+  [localization: string]: { [key: string]: ISeo | IIntro | string };
 }
 
 interface IGlobalData {
@@ -203,6 +204,19 @@ export const HOME_LABELS: ITranslations = {
       // openGraph: '',
       // twitterCard: '',
     },
+    intro: {
+      titlePrefix: "Łukasz Sobola",
+      title: "Front-end developer",
+      introText: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus
+      pariatur perferendis deserunt nemo, est at rerum fuga iure laboriosam
+      dignissimos! Voluptas eligendi libero sint explicabo cum et
+      praesentium sed quisquam.`,
+      moreBtn: {
+        label: "więcej o mnie",
+        href: "/o-mnie",
+        newTab: false,
+      },
+    },
   },
   en: {
     seo: {
@@ -217,6 +231,19 @@ export const HOME_LABELS: ITranslations = {
       // shareImage: '',
       // openGraph: '',
       // twitterCard: '',
+    },
+    intro: {
+      titlePrefix: "Łukasz Sobola",
+      title: "Front-end developer",
+      introText: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus
+      pariatur perferendis deserunt nemo, est at rerum fuga iure laboriosam
+      dignissimos! Voluptas eligendi libero sint explicabo cum et
+      praesentium sed quisquam.`,
+      moreBtn: {
+        label: "more about me",
+        href: "/about",
+        newTab: false,
+      },
     },
   },
 };

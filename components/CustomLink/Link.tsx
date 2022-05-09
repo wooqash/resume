@@ -6,6 +6,7 @@ import { VisuallyHidden } from "@chakra-ui/react";
 type LinkProps = Omit<NextLinkProps, "href" | "as" | "passHref" | "children"> &
   ILink & {
     to?: string;
+    className?: string;
     children?: ReactChild;
     onClick?: (e: MouseEvent<HTMLAnchorElement>) => void;
   };
@@ -18,6 +19,7 @@ const Link = forwardRef<HTMLAnchorElement, LinkProps>((props, ref) => {
     shallow,
     locale,
     children,
+    className,
     to,
     onClick,
     ...link
@@ -47,6 +49,8 @@ const Link = forwardRef<HTMLAnchorElement, LinkProps>((props, ref) => {
       ? { "aria-describedby": ariaDescribedbyIdAttr }
       : { "aria-labelledby": ariaLabelledbyIdAttr } || {};
 
+  const classes = className ? { className: className } : {};
+
   if (isInternalLink && url) {
     return (
       <NextLink
@@ -64,6 +68,7 @@ const Link = forwardRef<HTMLAnchorElement, LinkProps>((props, ref) => {
           {...roleAttr}
           {...ariaIdAttr}
           {...tabIndexAttr}
+          {...classes}
           ref={ref}
           onClick={onClick}
         >
@@ -81,6 +86,7 @@ const Link = forwardRef<HTMLAnchorElement, LinkProps>((props, ref) => {
       {...roleAttr}
       {...ariaIdAttr}
       {...tabIndexAttr}
+      {...classes}
       ref={ref}
       onClick={onClick}
     >

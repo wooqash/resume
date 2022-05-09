@@ -3,11 +3,9 @@ import { ILink } from "@/types/link.interface";
 import TooltipLinkWrapper from "./TooltipLinkWrapper";
 import Link from "./Link";
 
-import style from "./links.module.scss";
-
 type CustomLinkProps = {
   link: ILink;
-  // className?: string;
+  className?: string;
   locale?: string;
   children?: ReactChild;
   handleClick?: (e: MouseEvent<HTMLAnchorElement>) => void;
@@ -15,22 +13,16 @@ type CustomLinkProps = {
 };
 
 const CustomLink: React.FC<CustomLinkProps> = (props) => {
-  const {
-    link,
-    locale,
-    children,
-    // className,
-    handleClick,
-  } = props;
+  const { link, locale, children, className, handleClick } = props;
   const { "aria-labelledby": labelledby } = link;
 
-  // const classes = className ? { className } : {};
+  const classes = className ? { className: className } : {};
 
   // For internal links, use the Next.js Link component
   if (labelledby) {
     return (
       <TooltipLinkWrapper link={link}>
-        <Link locale={locale} {...link} onClick={handleClick}>
+        <Link locale={locale} {...link} onClick={handleClick} {...classes}>
           {children}
         </Link>
       </TooltipLinkWrapper>
@@ -38,7 +30,7 @@ const CustomLink: React.FC<CustomLinkProps> = (props) => {
   }
 
   return (
-    <Link locale={locale} {...link} onClick={handleClick}>
+    <Link locale={locale} {...link} onClick={handleClick} {...classes}>
       {children}
     </Link>
   );

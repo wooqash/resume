@@ -1,5 +1,6 @@
-import { ButtonType, IButton } from "@/types/button.interface";
+import { IButton, ButtonStyleType } from "@/types/button.interface";
 import { IconType } from "@/types/icon.enum";
+import { IIntro } from "@/types/intro.interface";
 import { ILink, ILinkWithIcon } from "@/types/link.interface";
 import { IMenu } from "@/types/menu.interface";
 import { ISeo } from "@/types/seo.interface";
@@ -52,9 +53,20 @@ export const isISeo = (link: any): link is ISeo => {
 export const isIButton = (button: any): button is IButton => {
   return (
     typeof button.label === "string" &&
-    typeof button["aria-description"] === "string" &&
-    (button.type === ButtonType.PRIMARY ||
-      button.type === ButtonType.SECONDARY ||
-      button.type === undefined)
+    (button.variant === ButtonStyleType.SOLID ||
+      button.variant === ButtonStyleType.OUTLINE ||
+      button.variant === ButtonStyleType.GHOST ||
+      button.variant === ButtonStyleType.LINK ||
+      button.variant === undefined)
+  );
+};
+
+export const isIIntro = (intro: any): intro is IIntro => {
+  return (
+    (typeof intro.titlePrefix === "string" ||
+      intro.titlePrefix === "undefined") &&
+    typeof intro.title === "string" &&
+    typeof intro.introText === "string" &&
+    (typeof intro.moreBtn === "undefined" || isILink(intro.moreBtn))
   );
 };

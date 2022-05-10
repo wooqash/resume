@@ -1,4 +1,5 @@
 import { IButton, ButtonStyleType } from "@/types/button.interface";
+import { IHeading } from "@/types/heading";
 import { IconType } from "@/types/icon.enum";
 import { IIntro } from "@/types/intro.interface";
 import { ILink, ILinkWithIcon } from "@/types/link.interface";
@@ -68,5 +69,13 @@ export const isIIntro = (intro: any): intro is IIntro => {
     typeof intro.title === "string" &&
     typeof intro.introText === "string" &&
     (typeof intro.moreBtn === "undefined" || isILink(intro.moreBtn))
+  );
+};
+
+export const isIHeading = (heading: any): heading is IHeading => {
+  return (
+    typeof heading.title === "string" &&
+    (typeof heading.shadowTitle === "string" ||
+      heading.shadowTitle === "undefined")
   );
 };

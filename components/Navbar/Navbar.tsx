@@ -66,7 +66,7 @@ const Navbar: React.FC<NavbarProps> = () => {
     if (
       isMobile &&
       isScrollHeightIsNumber &&
-      window.innerHeight === scrollHeight
+      window.innerHeight >= scrollHeight
     ) {
       setStickyBottomNavAnimation(true);
       return;

@@ -5,7 +5,7 @@ import PersonalTimeline from "@/components/PersonalTimline";
 import Seo from "@/components/Seo";
 import Skills from "@/components/Skills";
 import Title from "@/components/Title";
-import { VStack } from "@chakra-ui/react";
+import { Flex, VStack } from "@chakra-ui/react";
 import { useLanguageContext } from "contexts/language";
 import { isISeo } from "helpers/type-guards.helpers";
 import type { NextPage } from "next";
@@ -21,10 +21,12 @@ const AboutPL: NextPage = () => {
     <Layout>
       <>
         {seoMeta && <Seo meta={seoMeta} />}
-        <VStack p={{ base: 4, lg: 8 }}>
+        <VStack py={{ base: 20, lg: 12 }} px={{ base: 4, lg: 28 }}>
           <Title />
-          <JobProfile />
-          <PersonalInfo />
+          <Flex direction={{ base: "column", lg: "row" }}>
+            <JobProfile />
+            <PersonalInfo />
+          </Flex>
           <Skills />
           <PersonalTimeline />
         </VStack>

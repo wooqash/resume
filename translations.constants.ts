@@ -1,4 +1,5 @@
 import { ButtonStyleType, IButton } from "./types/button.interface";
+import { IHeading } from "./types/heading";
 import { IconType } from "./types/icon.enum";
 import { IIntro } from "./types/intro.interface";
 import { ILink, ILinkWithIcon } from "./types/link.interface";
@@ -6,7 +7,9 @@ import { IMenu } from "./types/menu.interface";
 import { ISeo } from "./types/seo.interface";
 
 interface ITranslations {
-  [localization: string]: { [key: string]: ISeo | IIntro | string };
+  [localization: string]: {
+    [key: string]: ISeo | IIntro | IHeading | string | undefined;
+  };
 }
 
 interface IGlobalData {
@@ -263,6 +266,10 @@ export const ABOUT_LABELS: ITranslations = {
       // openGraph: '',
       // twitterCard: '',
     },
+    heading: {
+      title: "o mnie",
+      shadowTitle: "Resume",
+    },
   },
   en: {
     seo: {
@@ -277,6 +284,10 @@ export const ABOUT_LABELS: ITranslations = {
       // shareImage: '',
       // openGraph: '',
       // twitterCard: '',
+    },
+    heading: {
+      title: "About me",
+      shadowTitle: "Resume",
     },
   },
 };

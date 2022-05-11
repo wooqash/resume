@@ -2,6 +2,7 @@ import { IButton, ButtonStyleType } from "@/types/button.interface";
 import { IHeading } from "@/types/heading";
 import { IconType } from "@/types/icon.enum";
 import { IIntro } from "@/types/intro.interface";
+import { IJobProfifle } from "@/types/job-profile.interface";
 import { ILink, ILinkWithIcon } from "@/types/link.interface";
 import { IMenu } from "@/types/menu.interface";
 import { ISeo } from "@/types/seo.interface";
@@ -77,5 +78,11 @@ export const isIHeading = (heading: any): heading is IHeading => {
     typeof heading.title === "string" &&
     (typeof heading.shadowTitle === "string" ||
       heading.shadowTitle === "undefined")
+  );
+};
+
+export const isIJobProfile = (jobProfile: any): jobProfile is IJobProfifle => {
+  return (
+    typeof jobProfile.title === "string" && typeof jobProfile.text === "string"
   );
 };

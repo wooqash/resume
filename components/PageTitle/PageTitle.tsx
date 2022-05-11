@@ -1,12 +1,11 @@
 import { Box, Heading, VStack } from "@chakra-ui/react";
 import { useLanguageContext } from "contexts/language";
 import { isIHeading } from "helpers/type-guards.helpers";
-import { stringify } from "querystring";
 import { ABOUT_LABELS } from "translations.constants";
 
-type TitleProps = {};
+type PageTitleProps = {};
 
-const Title: React.FC<TitleProps> = () => {
+const PageTitle: React.FC<PageTitleProps> = () => {
   const { lang } = useLanguageContext();
   const pageTrans = ABOUT_LABELS[lang].heading;
   const heading = pageTrans && isIHeading(pageTrans) ? pageTrans : null;
@@ -33,15 +32,20 @@ const Title: React.FC<TitleProps> = () => {
       <VStack pos="relative" textTransform="uppercase" alignItems="center">
         <Heading
           as="h1"
-          position="absolute"
-          top="40%"
-          fontSize="3.5rem"
+          position={{ sm: "absolute" }}
+          top={{ sm: "40%" }}
+          fontSize={{ base: "2.18rem", sm: "3.5rem" }}
           textAlign="center"
         >
           {colorLastWordOfTitle(heading.title)}
         </Heading>
         {heading?.shadowTitle && (
-          <Heading as="span" opacity="0.07" fontSize="6.875rem">
+          <Heading
+            as="span"
+            opacity="0.07"
+            fontSize="6.875rem"
+            display={{ base: "none", sm: "block" }}
+          >
             {heading.shadowTitle}
           </Heading>
         )}
@@ -50,4 +54,4 @@ const Title: React.FC<TitleProps> = () => {
   );
 };
 
-export default Title;
+export default PageTitle;

@@ -1,10 +1,16 @@
-import Layout from "@/components/Layout";
-import Seo from "@/components/Seo";
+import type { NextPage } from "next";
+import { SimpleGrid, VStack } from "@chakra-ui/react";
 import { useLanguageContext } from "contexts/language";
 import { isISeo } from "helpers/type-guards.helpers";
-import type { NextPage } from "next";
 import { ABOUT_LABELS } from "translations.constants";
-import styles from "../styles/Home.module.css";
+
+import JobProfile from "@/components/JobProfile";
+import Layout from "@/components/Layout";
+import PageTitle from "@/components/PageTitle";
+import PersonalInfo from "@/components/PersonalInfo";
+import PersonalTimeline from "@/components/PersonalTimline";
+import Seo from "@/components/Seo";
+import Skills from "@/components/Skills";
 
 const AboutEN: NextPage = () => {
   const { lang } = useLanguageContext();
@@ -15,7 +21,25 @@ const AboutEN: NextPage = () => {
     <Layout>
       <>
         {seoMeta && <Seo meta={seoMeta} />}
-        <h1>O mnie</h1>
+        <VStack
+          py={{ base: 20, lg: 12 }}
+          pl={{ base: 8, md: 4 }}
+          pr={{ base: 8, lg: 28 }}
+          alignItems={{ base: "flex-start", sm: "center" }}
+        >
+          <PageTitle />
+          <SimpleGrid
+            columns={{ base: 1, lg: 2 }}
+            spacing="10"
+            px={{ base: 0, md: 4, lg: 8 }}
+            py={{ base: 8 }}
+          >
+            <JobProfile />
+            <PersonalInfo />
+          </SimpleGrid>
+          <Skills />
+          <PersonalTimeline />
+        </VStack>
       </>
     </Layout>
   );

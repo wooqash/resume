@@ -1,7 +1,21 @@
-type BoxHeaderProps = {};
+import { Heading } from "@chakra-ui/react";
 
-const BoxHeader: React.FC<BoxHeaderProps> = () => {
-  return <div>BoxHeader</div>;
+type BoxHeaderProps = {
+  title: string;
+};
+
+const BoxHeader: React.FC<BoxHeaderProps> = ({ title }) => {
+  return (
+    <Heading
+      as="h2"
+      fontSize={{ base: "1.31rem", lg: "1.625rem" }}
+      fontWeight="600"
+      textTransform="uppercase"
+      mb="4"
+    >
+      {title}
+    </Heading>
+  );
 };
 
 export default BoxHeader;

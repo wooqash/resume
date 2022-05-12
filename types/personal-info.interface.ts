@@ -1,4 +1,5 @@
 export interface IPersonalInfoItem {
+  id: string | number;
   label: string;
   text: string;
 }

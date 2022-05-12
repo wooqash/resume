@@ -5,6 +5,10 @@ import { IIntro } from "@/types/intro.interface";
 import { IJobProfifle } from "@/types/job-profile.interface";
 import { ILink, ILinkWithIcon } from "@/types/link.interface";
 import { IMenu } from "@/types/menu.interface";
+import {
+  IPersonalInfo,
+  IPersonalInfoItem,
+} from "@/types/personal-info.interface";
 import { ISeo } from "@/types/seo.interface";
 
 export const isILink = (link: any): link is ILink => {
@@ -84,5 +88,24 @@ export const isIHeading = (heading: any): heading is IHeading => {
 export const isIJobProfile = (jobProfile: any): jobProfile is IJobProfifle => {
   return (
     typeof jobProfile.title === "string" && typeof jobProfile.text === "string"
+  );
+};
+
+export const isPersonalInfoItem = (item: any): item is IPersonalInfoItem => {
+  return (
+    (typeof item.id === "string" || typeof item.id === "number") &&
+    typeof item.label === "string" &&
+    typeof item.text === "string"
+  );
+};
+
+export const isIPersonalInfo = (
+  personalInfo: any
+): personalInfo is IPersonalInfo => {
+  console.log(Array.isArray(personalInfo.info));
+  return (
+    typeof personalInfo.title === "string" &&
+    Array.isArray(personalInfo.info) &&
+    isPersonalInfoItem(personalInfo.info[0])
   );
 };

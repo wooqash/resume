@@ -154,6 +154,7 @@ const Navbar: React.FC<NavbarProps> = () => {
           bottom={{ base: "auto", lg: 8 }}
           left={{ base: mobileNavAnimation ? 4 : "-100%", lg: "auto" }}
           position="fixed"
+          marginInlineStart="0 !important"
           right={{ base: "auto", lg: desktopNavAnimation ? 8 : "-100%" }}
           top={{ base: 4, lg: "auto" }}
           transition={{ base: "1s ease-out left", lg: "1s ease-out right" }}

@@ -5,11 +5,19 @@ import { IIntro } from "./types/intro.interface";
 import { IJobProfifle } from "./types/job-profile.interface";
 import { ILink, ILinkWithIcon } from "./types/link.interface";
 import { IMenu } from "./types/menu.interface";
+import { IPersonalInfo } from "./types/personal-info.interface";
 import { ISeo } from "./types/seo.interface";
 
 interface ITranslations {
   [localization: string]: {
-    [key: string]: ISeo | IIntro | IHeading | IJobProfifle | string | undefined;
+    [key: string]:
+      | ISeo
+      | IIntro
+      | IHeading
+      | IJobProfifle
+      | IPersonalInfo
+      | string
+      | undefined;
   };
 }
 
@@ -275,6 +283,51 @@ export const ABOUT_LABELS: ITranslations = {
       title: "Profil zawodowy",
       text: "Od 2012 roku pracuje jako frontend developer. W trakcie tego okresu byłem zaangażowany w kilkanaście a może i więcej projektów komercyjnych. Moją główną odpowiedzialnością jest tworznie warstwy prezentacyjnej stron internetowych na bazie projektów graficznych. Obecnie jestem skupiony na podnoszeniu moich kwalifikacji z zakresu JavaScript'u i jestem zaintersowany głównie tego typu projektami.",
     },
+    personalInfo: {
+      title: "Dane osobiste",
+      info: [
+        {
+          id: "1",
+          label: "Imię",
+          text: "Łukasz",
+        },
+        {
+          id: "2",
+          label: "Nazwisko",
+          text: "Sobola",
+        },
+        {
+          id: "3",
+          label: "Data urodzenia",
+          text: "17/01/1984",
+        },
+        {
+          id: "4",
+          label: "Narodowość",
+          text: "Polska",
+        },
+        {
+          id: "5",
+          label: "Telefon",
+          text: "+48 796 776 716",
+        },
+        {
+          id: "6",
+          label: "Email",
+          text: "lukasz.sobola@gmail.com",
+        },
+        {
+          id: "7",
+          label: "Miejsce zamieszkania",
+          text: "Łódź 91-165, ul. Prof. Eugeniusza Romera 21",
+        },
+        {
+          id: "8",
+          label: "Języki",
+          text: "Polski (natywny), Angielski (B1)",
+        },
+      ],
+    },
   },
   en: {
     seo: {
@@ -297,6 +350,51 @@ export const ABOUT_LABELS: ITranslations = {
     jobProfile: {
       title: "Job profile",
       text: "From 2012 I'm working as front-end developer. During this period I was involved in over a dozen or even more commercial projects. My main resposibility is creating a visual layer of websites based on graphic projects. At this moment I'm focused on improving my JavaScript skills and I'm interested in this type of projects.",
+    },
+    personalInfo: {
+      title: "Personal Info",
+      info: [
+        {
+          id: "1",
+          label: "Name",
+          text: "Łukasz",
+        },
+        {
+          id: "2",
+          label: "Surname",
+          text: "Sobola",
+        },
+        {
+          id: "3",
+          label: "Date of birth",
+          text: "17/01/1984",
+        },
+        {
+          id: "4",
+          label: "Nationality",
+          text: "Poland",
+        },
+        {
+          id: "5",
+          label: "Phone No",
+          text: "+48 796 776 716",
+        },
+        {
+          id: "6",
+          label: "Email",
+          text: "lukasz.sobola@gmail.com",
+        },
+        {
+          id: "7",
+          label: "Address",
+          text: "Łódź 91-165, ul. Prof. Eugeniusza Romera 21",
+        },
+        {
+          id: "8",
+          label: "Languages",
+          text: "Polish (native), English (B1)",
+        },
+      ],
     },
   },
 };

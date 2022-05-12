@@ -29,7 +29,12 @@ const PageTitle: React.FC<PageTitleProps> = () => {
 
   return (
     heading && (
-      <VStack pos="relative" textTransform="uppercase" alignItems="center">
+      <VStack
+        pos="relative"
+        textTransform="uppercase"
+        alignItems="center"
+        mb="20"
+      >
         <Heading
           as="h1"
           position={{ sm: "absolute" }}

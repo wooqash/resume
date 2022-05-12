@@ -32,9 +32,8 @@ const AboutPL: NextPage = () => {
           <PageTitle />
           <SimpleGrid
             columns={{ base: 1, lg: 2 }}
-            spacing="10"
+            spacing="8"
             px={{ base: 0, md: 4, lg: 8 }}
-            py={{ base: 4, md: 8 }}
           >
             <PersonalInfo />
             <JobProfile />

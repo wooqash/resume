@@ -23,19 +23,20 @@ const AboutEN: NextPage = () => {
         {seoMeta && <Seo meta={seoMeta} />}
         <VStack
           py={{ base: 20, lg: 12 }}
-          pl={{ base: 8, md: 4 }}
-          pr={{ base: 8, lg: 28 }}
+          pl={{ base: 4, md: 4 }}
+          pr={{ base: 4, lg: 28 }}
           alignItems={{ base: "flex-start", sm: "center" }}
+          maxW="container.xl"
+          m="0 auto"
         >
           <PageTitle />
           <SimpleGrid
             columns={{ base: 1, lg: 2 }}
-            spacing="10"
+            spacing="8"
             px={{ base: 0, md: 4, lg: 8 }}
-            py={{ base: 8 }}
           >
-            <JobProfile />
             <PersonalInfo />
+            <JobProfile />
           </SimpleGrid>
           <Skills />
           <PersonalTimeline />

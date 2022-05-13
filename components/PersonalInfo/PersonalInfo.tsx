@@ -1,5 +1,6 @@
 import { PersonalInfoType } from "@/types/personal-info.interface";
 import {
+  Avatar,
   Box,
   Icon,
   List,
@@ -59,6 +60,19 @@ const PersonalInfo: React.FC<PersonalInfoProps> = () => {
     personalInfo && (
       <VStack alignItems={{ base: "flex-start" }} py={{ lg: 8 }}>
         <BoxHeader title={personalInfo.title} />
+        <Box
+          as="div"
+          display={{ base: "flex", lg: "none" }}
+          justifyContent="center"
+          w="full"
+          my="2rem !important"
+        >
+          <Avatar
+            src="/images//Łukasz_Sobola.webp"
+            size="2xl"
+            name="Łukasz Sobola"
+          />
+        </Box>
         <List display="flex" flexWrap="wrap" mt="0" w="100%">
           {personalInfo.info.map((item) => {
             return (

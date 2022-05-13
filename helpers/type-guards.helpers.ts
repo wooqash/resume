@@ -8,6 +8,7 @@ import { IMenu } from "@/types/menu.interface";
 import {
   IPersonalInfo,
   IPersonalInfoItem,
+  PersonalInfoType,
 } from "@/types/personal-info.interface";
 import { ISeo } from "@/types/seo.interface";
 
@@ -91,9 +92,23 @@ export const isIJobProfile = (jobProfile: any): jobProfile is IJobProfifle => {
   );
 };
 
+const isPersonalInfoType = (type: any): type is PersonalInfoType => {
+  return (
+    type === "name" ||
+    type === "surname" ||
+    type === "dateofbirth" ||
+    type === "nationality" ||
+    type === "phoneno" ||
+    type === "email" ||
+    type === "address" ||
+    type === "langs"
+  );
+};
+
 export const isPersonalInfoItem = (item: any): item is IPersonalInfoItem => {
   return (
     (typeof item.id === "string" || typeof item.id === "number") &&
+    isPersonalInfoType(item.type) &&
     typeof item.label === "string" &&
     typeof item.text === "string"
   );

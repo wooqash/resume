@@ -288,41 +288,49 @@ export const ABOUT_LABELS: ITranslations = {
       info: [
         {
           id: "1",
+          type: "name",
           label: "Imię",
           text: "Łukasz",
         },
         {
           id: "2",
+          type: "surname",
           label: "Nazwisko",
           text: "Sobola",
         },
         {
           id: "3",
+          type: "dateofbirth",
           label: "Data urodzenia",
           text: "17/01/1984",
         },
         {
           id: "4",
+          type: "nationality",
           label: "Narodowość",
           text: "Polska",
         },
         {
           id: "5",
+          type: "phoneno",
           label: "Telefon",
           text: "+48 796 776 716",
         },
         {
           id: "6",
+          type: "email",
           label: "Email",
           text: "lukasz.sobola@gmail.com",
         },
         {
           id: "7",
+          type: "address",
           label: "Miejsce zamieszkania",
           text: "Łódź 91-165, ul. Prof. Eugeniusza Romera 21",
         },
         {
           id: "8",
+          type: "langs",
           label: "Języki",
           text: "Polski (natywny), Angielski (B1)",
         },
@@ -356,41 +364,49 @@ export const ABOUT_LABELS: ITranslations = {
       info: [
         {
           id: "1",
+          type: "name",
           label: "Name",
           text: "Łukasz",
         },
         {
           id: "2",
+          type: "surname",
           label: "Surname",
           text: "Sobola",
         },
         {
           id: "3",
+          type: "dateofbirth",
           label: "Date of birth",
           text: "17/01/1984",
         },
         {
           id: "4",
+          type: "nationality",
           label: "Nationality",
           text: "Poland",
         },
         {
           id: "5",
+          type: "phoneno",
           label: "Phone No",
           text: "+48 796 776 716",
         },
         {
           id: "6",
+          type: "email",
           label: "Email",
           text: "lukasz.sobola@gmail.com",
         },
         {
           id: "7",
+          type: "address",
           label: "Address",
           text: "Łódź 91-165, ul. Prof. Eugeniusza Romera 21",
         },
         {
           id: "8",
+          type: "langs",
           label: "Languages",
           text: "Polish (native), English (B1)",
         },

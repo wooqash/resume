@@ -7,6 +7,7 @@ import { ILink, ILinkWithIcon } from "./types/link.interface";
 import { IMenu } from "./types/menu.interface";
 import { IPersonalInfo } from "./types/personal-info.interface";
 import { ISeo } from "./types/seo.interface";
+import { ISkills } from "./types/skills.interface";
 
 interface ITranslations {
   [localization: string]: {
@@ -16,6 +17,7 @@ interface ITranslations {
       | IHeading
       | IJobProfifle
       | IPersonalInfo
+      | ISkills
       | string
       | undefined;
   };
@@ -336,6 +338,66 @@ export const ABOUT_LABELS: ITranslations = {
         },
       ],
     },
+    skills: {
+      title: "Umiejętności",
+      types: [
+        {
+          id: 1,
+          name: "techniczne",
+          skillsGroups: [
+            {
+              id: 1,
+              name: "Technologie webowe",
+              skills: ["html5", "css3", "sass", "javascript", "typescript"],
+            },
+            {
+              id: 2,
+              name: "Biblioteki i frameworki",
+              skills: [
+                "react",
+                "angular",
+                "nextjs",
+                "jquery",
+                "chakra-ui",
+                "bootstrap",
+                "foundation",
+                "handlebars",
+              ],
+            },
+            {
+              id: 3,
+              name: "Narzędzia",
+              skills: [
+                "git",
+                "vscode",
+                "photoshop",
+                "figma",
+                "gulp",
+                "parcel",
+                "webpack",
+                "jira",
+                "trello",
+              ],
+            },
+            {
+              id: 4,
+              name: "Praktyki",
+              skills: [
+                "koncepcja rwd",
+                "metodologia bem",
+                "standardy web accessibility",
+              ],
+            },
+          ],
+        },
+        {
+          id: 2,
+          name: "nietechniczne",
+          skillsGroups:
+            "komunikatywność, silna motywacja i chęć uczenia się, umiejętność pracy w zespole, wytrwałość",
+        },
+      ],
+    },
   },
   en: {
     seo: {
@@ -409,6 +471,66 @@ export const ABOUT_LABELS: ITranslations = {
           type: "langs",
           label: "Languages",
           text: "Polish (native), English (B1)",
+        },
+      ],
+    },
+    skills: {
+      title: "Skills",
+      types: [
+        {
+          id: 1,
+          name: "technical",
+          skillsGroups: [
+            {
+              id: 1,
+              name: "Web technologies",
+              skills: ["html5", "css3", "sass", "javascript", "typescript"],
+            },
+            {
+              id: 2,
+              name: "Libararies & Frameworks",
+              skills: [
+                "react",
+                "angular",
+                "nextjs",
+                "jquery",
+                "chakra-ui",
+                "bootstrap",
+                "foundation",
+                "handlebars",
+              ],
+            },
+            {
+              id: 3,
+              name: "Tools",
+              skills: [
+                "git",
+                "vscode",
+                "photoshop",
+                "figma",
+                "gulp",
+                "parcel",
+                "webpack",
+                "jira",
+                "trello",
+              ],
+            },
+            {
+              id: 4,
+              name: "Practices",
+              skills: [
+                "koncepcja rwd",
+                "metodologia bem",
+                "standardy web accessibility",
+              ],
+            },
+          ],
+        },
+        {
+          id: 2,
+          name: "nietechniczne",
+          skillsGroups:
+            "communicativeness, strong motivation and willingness to learn, ability to work in a team, perseverance",
         },
       ],
     },

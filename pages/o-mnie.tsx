@@ -38,8 +38,10 @@ const AboutPL: NextPage = () => {
             <PersonalInfo />
             <JobProfile />
           </SimpleGrid>
-          <Skills />
-          <PersonalTimeline />
+          <VStack spacing="8">
+            <Skills />
+            <PersonalTimeline />
+          </VStack>
         </VStack>
       </>
     </Layout>

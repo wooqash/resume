@@ -11,6 +11,12 @@ import {
   PersonalInfoType,
 } from "@/types/personal-info.interface";
 import { ISeo } from "@/types/seo.interface";
+import {
+  ISkills,
+  ISkillsGroup,
+  ISkillsSection,
+  ISkillsTypes,
+} from "@/types/skills.interface";
 
 export const isILink = (link: any): link is ILink => {
   return (
@@ -117,10 +123,34 @@ export const isPersonalInfoItem = (item: any): item is IPersonalInfoItem => {
 export const isIPersonalInfo = (
   personalInfo: any
 ): personalInfo is IPersonalInfo => {
-  console.log(Array.isArray(personalInfo.info));
   return (
     typeof personalInfo.title === "string" &&
     Array.isArray(personalInfo.info) &&
     isPersonalInfoItem(personalInfo.info[0])
+  );
+};
+
+const isSkillsGroup = (group: any): group is ISkillsGroup => {
+  return (
+    (typeof group.id === "string" || typeof group.id === "number") &&
+    typeof group.name === "string" &&
+    Array.isArray(group.skills)
+  );
+};
+
+const isSkillsTypes = (type: any): type is ISkillsTypes => {
+  return (
+    ((typeof type.id === "string" || typeof type.id === "number") &&
+      typeof type.name === "string" &&
+      typeof type.skillsGroups === "string") ||
+    (Array.isArray(type.skillsGroups) && isSkillsGroup(type.skillsGroups[0]))
+  );
+};
+
+export const isISkills = (skills: any): skills is ISkills => {
+  return (
+    typeof skills.title === "string" &&
+    Array.isArray(skills.types) &&
+    isSkillsTypes(skills.types[0])
   );
 };

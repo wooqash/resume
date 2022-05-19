@@ -55,55 +55,73 @@ const Skills: React.FC<SkillsProps> = () => {
   const getIcon = (type: string) => {
     switch (type.toLowerCase()) {
       case "html5":
-        return <Icon as={SiHtml5} mr="1" />;
+        return <Icon as={SiHtml5} mr="2" color="red.400" />;
       case "css3":
-        return <Icon as={SiCss3} mr="1" />;
+        return <Icon as={SiCss3} mr="2" color="blue.400" />;
       case "sass":
-        return <Icon as={SiSass} mr="1" />;
+        return <Icon as={SiSass} mr="2" color="pink.400" />;
       case "javascript":
-        return <Icon as={SiJavascript} mr="1" />;
+        return <Icon as={SiJavascript} mr="2" color="yellow.400" />;
       case "typescript":
-        return <Icon as={SiTypescript} mr="1" />;
+        return <Icon as={SiTypescript} mr="2" color="blue.400" />;
       case "react":
-        return <Icon as={SiReact} mr="1" />;
+        return <Icon as={SiReact} mr="2" color="blue.400" />;
       case "angular":
-        return <Icon as={SiAngular} mr="1" />;
+        return <Icon as={SiAngular} mr="2" color="red.400" />;
       case "nextjs":
-        return <Icon as={SiNextdotjs} mr="1" />;
+        return (
+          <Icon
+            as={SiNextdotjs}
+            mr="2"
+            color={colorMode === "dark" ? "teal.400" : "black"}
+          />
+        );
       case "jquery":
-        return <Icon as={SiJquery} mr="1" />;
+        return <Icon as={SiJquery} mr="2" color="blue.400" />;
       case "chakra-ui":
-        return <Icon as={MdOfflineBolt} mr="1" />;
+        return <Icon as={MdOfflineBolt} mr="2" color="green.200" />;
       case "bootstrap":
-        return <Icon as={SiBootstrap} mr="1" />;
+        return <Icon as={SiBootstrap} mr="2" color="violet" />;
       case "foundation":
-        return <Icon as={SiFoursquarecityguide} mr="1" />;
+        return <Icon as={SiFoursquarecityguide} mr="2" color="blue.400" />;
       case "handlebars":
-        return <Icon as={SiHandlebarsdotjs} mr="1" />;
+        return <Icon as={SiHandlebarsdotjs} mr="2" color="orange.400" />;
       case "git":
-        return <Icon as={SiGit} mr="1" />;
+        return <Icon as={SiGit} mr="2" color="red.400" />;
       case "vscode":
-        return <Icon as={SiVisualstudiocode} mr="1" />;
+        return <Icon as={SiVisualstudiocode} mr="2" color="blue.400" />;
       case "photoshop":
-        return <Icon as={SiAdobephotoshop} mr="1" />;
+        return <Icon as={SiAdobephotoshop} mr="2" color="blue.400" />;
       case "figma":
-        return <Icon as={SiFigma} mr="1" />;
+        return (
+          <Icon
+            as={SiFigma}
+            mr="2"
+            color={colorMode === "dark" ? "teal.400" : "black"}
+          />
+        );
       case "gulp":
-        return <Icon as={SiGulp} mr="1" />;
+        return <Icon as={SiGulp} mr="2" color="red.400" />;
       case "parcel":
-        return <Icon as={GoPackage} mr="1" />;
+        return <Icon as={GoPackage} mr="2" color="yellow.600" />;
       case "webpack":
-        return <Icon as={SiWebpack} mr="1" />;
+        return <Icon as={SiWebpack} mr="2" color="blue.200" />;
       case "jira":
-        return <Icon as={SiJira} mr="1" />;
+        return <Icon as={SiJira} mr="2" color="blue.600" />;
       case "trello":
-        return <Icon as={SiTrello} mr="1" />;
+        return <Icon as={SiTrello} mr="2" color="blue.400" />;
       case "standardy web accessibility":
-        return <Icon as={MdAccessibilityNew} mr="1" />;
+        return <Icon as={MdAccessibilityNew} mr="2" color="blue.400" />;
       case "metodologia bem":
-        return <Icon as={SiBuildkite} mr="1" />;
+        return <Icon as={SiBuildkite} mr="2" color="blue.400" />;
       case "koncepcja rwd":
-        return <Icon as={MdDevicesOther} mr="1" />;
+        return (
+          <Icon
+            as={MdDevicesOther}
+            mr="2"
+            color={colorMode === "dark" ? "teal.400" : "black"}
+          />
+        );
       default:
         let x: never = type;
         return;
@@ -153,12 +171,12 @@ const Skills: React.FC<SkillsProps> = () => {
                             </Heading>
                             {group.skills && (
                               <List display="flex" flexWrap="wrap">
-                                {group.skills.map((skill) => {
+                                {group.skills.map((skill, index) => {
                                   return (
                                     <ListItem key={skill} mr="2">
+                                      <Box as="span" mr="2">{`${skill}`}</Box>
                                       <Box
                                         as="span"
-                                        mr="1"
                                         textTransform="capitalize"
                                         color={
                                           colorMode === "dark"
@@ -169,7 +187,13 @@ const Skills: React.FC<SkillsProps> = () => {
                                       >
                                         {getIcon(skill)}
                                       </Box>
-                                      <Box as="span">{`${skill},`}</Box>
+                                      {index < group.skills.length - 1 && (
+                                        <span
+                                          dangerouslySetInnerHTML={{
+                                            __html: "&#8226;",
+                                          }}
+                                        ></span>
+                                      )}
                                     </ListItem>
                                   );
                                 })}

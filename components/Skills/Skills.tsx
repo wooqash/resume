@@ -13,27 +13,34 @@ import { isISkills } from "helpers/type-guards.helpers";
 import { Fragment } from "react";
 import { ABOUT_LABELS } from "translations.constants";
 import BoxHeader from "../BoxHeader";
+
 import {
-  DiAngularSimple,
-  DiBootstrap,
-  DiCss3,
-  DiGit,
-  DiGulp,
-  DiHtml5,
-  DiJira,
-  DiJqueryLogo,
-  DiPhotoshop,
-  DiReact,
-  DiSass,
-  DiTrello,
-  DiVisualstudio,
-} from "react-icons/di";
+  MdAccessibilityNew,
+  MdDevicesOther,
+  MdOfflineBolt,
+} from "react-icons/md";
+import { GoPackage } from "react-icons/go";
 import {
+  SiAdobephotoshop,
+  SiAngular,
+  SiBootstrap,
+  SiBuildkite,
+  SiCss3,
   SiFigma,
+  SiFoursquarecityguide,
+  SiGit,
+  SiGulp,
   SiHandlebarsdotjs,
+  SiHtml5,
   SiJavascript,
+  SiJira,
+  SiJquery,
   SiNextdotjs,
+  SiReact,
+  SiSass,
+  SiTrello,
   SiTypescript,
+  SiVisualstudiocode,
   SiWebpack,
 } from "react-icons/si";
 
@@ -46,45 +53,57 @@ const Skills: React.FC<SkillsProps> = () => {
   const skills = isISkills(pageTrans) ? pageTrans : null;
 
   const getIcon = (type: string) => {
-    switch (type) {
+    switch (type.toLowerCase()) {
       case "html5":
-        return <Icon as={DiHtml5} mr="1" />;
+        return <Icon as={SiHtml5} mr="1" />;
       case "css3":
-        return <Icon as={DiCss3} mr="1" />;
+        return <Icon as={SiCss3} mr="1" />;
       case "sass":
-        return <Icon as={DiSass} mr="1" />;
+        return <Icon as={SiSass} mr="1" />;
       case "javascript":
         return <Icon as={SiJavascript} mr="1" />;
       case "typescript":
         return <Icon as={SiTypescript} mr="1" />;
       case "react":
-        return <Icon as={DiReact} mr="1" />;
+        return <Icon as={SiReact} mr="1" />;
       case "angular":
-        return <Icon as={DiAngularSimple} mr="1" />;
+        return <Icon as={SiAngular} mr="1" />;
       case "nextjs":
         return <Icon as={SiNextdotjs} mr="1" />;
       case "jquery":
-        return <Icon as={DiJqueryLogo} mr="1" />;
+        return <Icon as={SiJquery} mr="1" />;
+      case "chakra-ui":
+        return <Icon as={MdOfflineBolt} mr="1" />;
       case "bootstrap":
-        return <Icon as={DiBootstrap} mr="1" />;
+        return <Icon as={SiBootstrap} mr="1" />;
+      case "foundation":
+        return <Icon as={SiFoursquarecityguide} mr="1" />;
       case "handlebars":
         return <Icon as={SiHandlebarsdotjs} mr="1" />;
       case "git":
-        return <Icon as={DiGit} mr="1" />;
+        return <Icon as={SiGit} mr="1" />;
       case "vscode":
-        return <Icon as={DiVisualstudio} mr="1" />;
+        return <Icon as={SiVisualstudiocode} mr="1" />;
       case "photoshop":
-        return <Icon as={DiPhotoshop} mr="1" />;
+        return <Icon as={SiAdobephotoshop} mr="1" />;
       case "figma":
         return <Icon as={SiFigma} mr="1" />;
       case "gulp":
-        return <Icon as={DiGulp} mr="1" />;
+        return <Icon as={SiGulp} mr="1" />;
+      case "parcel":
+        return <Icon as={GoPackage} mr="1" />;
       case "webpack":
         return <Icon as={SiWebpack} mr="1" />;
       case "jira":
-        return <Icon as={DiJira} mr="1" />;
+        return <Icon as={SiJira} mr="1" />;
       case "trello":
-        return <Icon as={DiTrello} mr="1" />;
+        return <Icon as={SiTrello} mr="1" />;
+      case "standardy web accessibility":
+        return <Icon as={MdAccessibilityNew} mr="1" />;
+      case "metodologia bem":
+        return <Icon as={SiBuildkite} mr="1" />;
+      case "koncepcja rwd":
+        return <Icon as={MdDevicesOther} mr="1" />;
       default:
         let x: never = type;
         return;

@@ -519,16 +519,16 @@ export const ABOUT_LABELS: ITranslations = {
               id: 4,
               name: "Practices",
               skills: [
-                "koncepcja rwd",
-                "metodologia bem",
-                "standardy web accessibility",
+                "rwd conception",
+                "bem metodology",
+                "web accessibility standards",
               ],
             },
           ],
         },
         {
           id: 2,
-          name: "nietechniczne",
+          name: "non-technical",
           skillsGroups:
             "communicativeness, strong motivation and willingness to learn, ability to work in a team, perseverance",
         },

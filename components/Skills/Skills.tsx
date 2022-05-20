@@ -203,12 +203,17 @@ const Skills: React.FC<SkillsProps> = () => {
                                         {getIcon(skill)}
                                       </Box>
                                       {index < group.skills.length - 1 && (
-                                        <span
+                                        <Box
+                                          as="span"
                                           dangerouslySetInnerHTML={{
                                             __html: "&#8226;",
                                           }}
-                                          style={{ color: "#A4E1E5" }}
-                                        ></span>
+                                          color={
+                                            colorMode === "dark"
+                                              ? "teal.200"
+                                              : "teal.700"
+                                          }
+                                        />
                                       )}
                                     </ListItem>
                                   );

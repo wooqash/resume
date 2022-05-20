@@ -11,12 +11,7 @@ import {
   PersonalInfoType,
 } from "@/types/personal-info.interface";
 import { ISeo } from "@/types/seo.interface";
-import {
-  ISkills,
-  ISkillsGroup,
-  ISkillsSection,
-  ISkillsTypes,
-} from "@/types/skills.interface";
+import { ISkills, ISkillsGroup, ISkillsTypes } from "@/types/skills.interface";
 
 export const isILink = (link: any): link is ILink => {
   return (

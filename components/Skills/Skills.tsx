@@ -148,7 +148,7 @@ const Skills: React.FC<SkillsProps> = () => {
                 >
                   {type.name}
                 </Heading>
-                <Flex flexWrap="wrap" w="100%">
+                <Flex flexWrap="wrap" w="100%" pb="8">
                   {Array.isArray(type.skillsGroups) ? (
                     type.skillsGroups.map((group) => {
                       return (
@@ -161,6 +161,9 @@ const Skills: React.FC<SkillsProps> = () => {
                           >
                             <Heading
                               as="h4"
+                              color={
+                                colorMode === "dark" ? "teal.200" : "teal.700"
+                              }
                               fontSize={{ base: ".9rem", lg: "1rem" }}
                               textTransform="capitalize"
                               fontFamily="body"

@@ -1,4 +1,6 @@
-import { ButtonStyleType, IButton } from "./types/button.interface";
+import { IButton } from "./types/button.interface";
+import { IEducation } from "./types/education.interfacee";
+import { IExperience } from "./types/experience.interface";
 import { IHeading } from "./types/heading";
 import { IconType } from "./types/icon.enum";
 import { IIntro } from "./types/intro.interface";
@@ -18,6 +20,8 @@ interface ITranslations {
       | IJobProfifle
       | IPersonalInfo
       | ISkills
+      | IExperience
+      | IEducation
       | string
       | undefined;
   };
@@ -398,6 +402,51 @@ export const ABOUT_LABELS: ITranslations = {
         },
       ],
     },
+    experience: {
+      title: "doświadczenie",
+      companies: [
+        {
+          companyName: "Sii",
+          period: "01/2022 - aktualnie",
+          position: "Frontend Developer (regular)",
+          description:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias unde quia atque. Quia molestiae laudantium reiciendis quaerat qui maiores quasi quo aspernatur esse quod, rerum sunt facilis maxime labore ipsum.",
+        },
+        {
+          companyName: "Prime Force",
+          period: "02/2019 - 01/2020",
+          position: "Angular Developer (junior)",
+          description:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias unde quia atque. Quia molestiae laudantium reiciendis quaerat qui maiores quasi quo aspernatur esse quod, rerum sunt facilis maxime labore ipsum.",
+        },
+        {
+          companyName: "Hypermedia/Isobar",
+          period: "10/2012 - 02/2019",
+          position: "Frontend Developer (regular -> senior)",
+          description:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias unde quia atque. Quia molestiae laudantium reiciendis quaerat qui maiores quasi quo aspernatur esse quod, rerum sunt facilis maxime labore ipsum.",
+        },
+        {
+          companyName: "Makolab",
+          period: "10/2010 - 10/2012",
+          position: "Web Developer (junior)",
+          description:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias unde quia atque. Quia molestiae laudantium reiciendis quaerat qui maiores quasi quo aspernatur esse quod, rerum sunt facilis maxime labore ipsum.",
+        },
+      ],
+    },
+    education: {
+      title: "edukacja",
+      schools: [
+        {
+          schoolName: "Uniwersytet Łódzki - Wydział Zarządzania",
+          period: "2004-2009",
+          direction: "Informatyka w zarządzaniu",
+          thesisTitle:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+        },
+      ],
+    },
   },
   en: {
     seo: {
@@ -531,6 +580,51 @@ export const ABOUT_LABELS: ITranslations = {
           name: "non-technical",
           skillsGroups:
             "communicativeness, strong motivation and willingness to learn, ability to work in a team, perseverance",
+        },
+      ],
+    },
+    experience: {
+      title: "experience",
+      companies: [
+        {
+          companyName: "Sii",
+          period: "01/2022 - till now",
+          position: "Frontend Developer (regular)",
+          description:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias unde quia atque. Quia molestiae laudantium reiciendis quaerat qui maiores quasi quo aspernatur esse quod, rerum sunt facilis maxime labore ipsum.",
+        },
+        {
+          companyName: "Prime Force",
+          period: "02/2019 - 01/2020",
+          position: "Angular Developer (junior)",
+          description:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias unde quia atque. Quia molestiae laudantium reiciendis quaerat qui maiores quasi quo aspernatur esse quod, rerum sunt facilis maxime labore ipsum.",
+        },
+        {
+          companyName: "Hypermedia/Isobar",
+          period: "10/2012 - 02/2019",
+          position: "Frontend Developer (regular -> senior)",
+          description:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias unde quia atque. Quia molestiae laudantium reiciendis quaerat qui maiores quasi quo aspernatur esse quod, rerum sunt facilis maxime labore ipsum.",
+        },
+        {
+          companyName: "Makolab",
+          period: "10/2010 - 10/2012",
+          position: "Web Developer (junior)",
+          description:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias unde quia atque. Quia molestiae laudantium reiciendis quaerat qui maiores quasi quo aspernatur esse quod, rerum sunt facilis maxime labore ipsum.",
+        },
+      ],
+    },
+    education: {
+      title: "education",
+      schools: [
+        {
+          schoolName: "University of Lodz - Faculty of Management",
+          period: "2004-2009",
+          direction: "Information Technology in Management",
+          thesisTitle:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
         },
       ],
     },

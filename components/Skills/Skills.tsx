@@ -112,9 +112,21 @@ const Skills: React.FC<SkillsProps> = () => {
         return <Icon as={SiTrello} mr="2" color="blue.400" />;
       case "standardy web accessibility":
         return <Icon as={MdAccessibilityNew} mr="2" color="blue.400" />;
+      case "web accessibility standards":
+        return <Icon as={MdAccessibilityNew} mr="2" color="blue.400" />;
       case "metodologia bem":
         return <Icon as={SiBuildkite} mr="2" color="blue.400" />;
+      case "bem metodology":
+        return <Icon as={SiBuildkite} mr="2" color="blue.400" />;
       case "koncepcja rwd":
+        return (
+          <Icon
+            as={MdDevicesOther}
+            mr="2"
+            color={colorMode === "dark" ? "teal.400" : "black"}
+          />
+        );
+      case "rwd conception":
         return (
           <Icon
             as={MdDevicesOther}
@@ -195,6 +207,7 @@ const Skills: React.FC<SkillsProps> = () => {
                                           dangerouslySetInnerHTML={{
                                             __html: "&#8226;",
                                           }}
+                                          style={{ color: "#A4E1E5" }}
                                         ></span>
                                       )}
                                     </ListItem>

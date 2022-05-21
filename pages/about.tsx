@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { SimpleGrid, VStack } from "@chakra-ui/react";
+import { Flex, SimpleGrid } from "@chakra-ui/react";
 import { useLanguageContext } from "contexts/language";
 import { isISeo } from "helpers/type-guards.helpers";
 import { ABOUT_LABELS } from "translations.constants";
@@ -21,28 +21,28 @@ const AboutEN: NextPage = () => {
     <Layout>
       <>
         {seoMeta && <Seo meta={seoMeta} />}
-        <VStack
+        <Flex
           py={{ base: 20, lg: 12 }}
           pl={{ base: 4, md: 4 }}
-          pr={{ base: 4, lg: 28 }}
+          pr={{ base: 4, md: 28 }}
           alignItems={{ base: "flex-start", sm: "center" }}
           maxW="container.xl"
           m="0 auto"
+          direction="column"
         >
           <PageTitle />
           <SimpleGrid
             columns={{ base: 1, lg: 2 }}
             spacing="8"
-            px={{ base: 0, md: 4, lg: 8 }}
+            mb="16"
+            // px={{ base: 0, md: 4, lg: 8 }}
           >
             <PersonalInfo />
             <JobProfile />
           </SimpleGrid>
-          <VStack spacing="8">
-            <Skills />
-            <PersonalTimeline />
-          </VStack>
-        </VStack>
+          <Skills />
+          <PersonalTimeline />
+        </Flex>
       </>
     </Layout>
   );

@@ -142,11 +142,7 @@ const Skills: React.FC<SkillsProps> = () => {
 
   return (
     skills && (
-      <VStack
-        alignItems={{ base: "flex-start", md: "center" }}
-        mx={{ md: "8" }}
-        my="8"
-      >
+      <VStack alignItems={{ base: "flex-start", md: "center" }} mb="12">
         <BoxHeader title={skills.title} />
         <VStack alignItems={{ base: "flex-start" }}>
           {skills.types.map((type) => {

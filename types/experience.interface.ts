@@ -1,5 +1,6 @@
 export interface ICompany {
-  companyName: string;
+  id: string | number;
+  name: string;
   period: string;
   position: string;
   description: string;

@@ -1,5 +1,6 @@
 export interface ISchool {
-  schoolName: string;
+  id: string | number;
+  name: string;
   period: string;
   direction: string;
   thesisTitle: string;

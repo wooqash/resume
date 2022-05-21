@@ -406,28 +406,32 @@ export const ABOUT_LABELS: ITranslations = {
       title: "doświadczenie",
       companies: [
         {
-          companyName: "Sii",
+          id: 1,
+          name: "Sii",
           period: "01/2022 - aktualnie",
           position: "Frontend Developer (regular)",
           description:
             "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias unde quia atque. Quia molestiae laudantium reiciendis quaerat qui maiores quasi quo aspernatur esse quod, rerum sunt facilis maxime labore ipsum.",
         },
         {
-          companyName: "Prime Force",
+          id: 2,
+          name: "Prime Force",
           period: "02/2019 - 01/2020",
           position: "Angular Developer (junior)",
           description:
             "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias unde quia atque. Quia molestiae laudantium reiciendis quaerat qui maiores quasi quo aspernatur esse quod, rerum sunt facilis maxime labore ipsum.",
         },
         {
-          companyName: "Hypermedia/Isobar",
+          id: 3,
+          name: "Hypermedia/Isobar",
           period: "10/2012 - 02/2019",
           position: "Frontend Developer (regular -> senior)",
           description:
             "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias unde quia atque. Quia molestiae laudantium reiciendis quaerat qui maiores quasi quo aspernatur esse quod, rerum sunt facilis maxime labore ipsum.",
         },
         {
-          companyName: "Makolab",
+          id: 4,
+          name: "Makolab",
           period: "10/2010 - 10/2012",
           position: "Web Developer (junior)",
           description:
@@ -439,7 +443,8 @@ export const ABOUT_LABELS: ITranslations = {
       title: "edukacja",
       schools: [
         {
-          schoolName: "Uniwersytet Łódzki - Wydział Zarządzania",
+          id: 1,
+          name: "Uniwersytet Łódzki - Wydział Zarządzania",
           period: "2004-2009",
           direction: "Informatyka w zarządzaniu",
           thesisTitle:
@@ -587,28 +592,32 @@ export const ABOUT_LABELS: ITranslations = {
       title: "experience",
       companies: [
         {
-          companyName: "Sii",
+          id: 1,
+          name: "Sii",
           period: "01/2022 - till now",
           position: "Frontend Developer (regular)",
           description:
             "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias unde quia atque. Quia molestiae laudantium reiciendis quaerat qui maiores quasi quo aspernatur esse quod, rerum sunt facilis maxime labore ipsum.",
         },
         {
-          companyName: "Prime Force",
+          id: 2,
+          name: "Prime Force",
           period: "02/2019 - 01/2020",
           position: "Angular Developer (junior)",
           description:
             "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias unde quia atque. Quia molestiae laudantium reiciendis quaerat qui maiores quasi quo aspernatur esse quod, rerum sunt facilis maxime labore ipsum.",
         },
         {
-          companyName: "Hypermedia/Isobar",
+          id: 3,
+          name: "Hypermedia/Isobar",
           period: "10/2012 - 02/2019",
           position: "Frontend Developer (regular -> senior)",
           description:
             "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias unde quia atque. Quia molestiae laudantium reiciendis quaerat qui maiores quasi quo aspernatur esse quod, rerum sunt facilis maxime labore ipsum.",
         },
         {
-          companyName: "Makolab",
+          id: 4,
+          name: "Makolab",
           period: "10/2010 - 10/2012",
           position: "Web Developer (junior)",
           description:
@@ -620,7 +629,8 @@ export const ABOUT_LABELS: ITranslations = {
       title: "education",
       schools: [
         {
-          schoolName: "University of Lodz - Faculty of Management",
+          id: 1,
+          name: "University of Lodz - Faculty of Management",
           period: "2004-2009",
           direction: "Information Technology in Management",
           thesisTitle:

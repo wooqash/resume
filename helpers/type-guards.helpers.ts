@@ -1,4 +1,6 @@
 import { IButton, ButtonStyleType } from "@/types/button.interface";
+import { IEducation, ISchool } from "@/types/education.interface";
+import { ICompany, IExperience } from "@/types/experience.interface";
 import { IHeading } from "@/types/heading";
 import { IconType } from "@/types/icon.enum";
 import { IIntro } from "@/types/intro.interface";
@@ -148,4 +150,34 @@ export const isISkills = (skills: any): skills is ISkills => {
     Array.isArray(skills.types) &&
     isSkillsTypes(skills.types[0])
   );
+};
+
+export const isIComapny = (company: any): company is ICompany => {
+  return (
+    (typeof company.id === "string" || typeof company.id === "number") &&
+    typeof company.name === "string" &&
+    typeof company.period === "string" &&
+    typeof company.position === "string" &&
+    typeof company.description === "string"
+  );
+};
+
+export const isIExperience = (experience: any): experience is IExperience => {
+  return (
+    typeof experience.title === "string" && isIComapny(experience.companies[0])
+  );
+};
+
+export const isISchool = (school: any): school is ISchool => {
+  return (
+    (typeof school.id === "string" || typeof school.id === "number") &&
+    typeof school.name === "string" &&
+    typeof school.period === "string" &&
+    typeof school.direction === "string" &&
+    typeof school.thesisTitle === "string"
+  );
+};
+
+export const isIEducation = (education: any): education is IEducation => {
+  return typeof education.title === "string" && isISchool(education.schools[0]);
 };

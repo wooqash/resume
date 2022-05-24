@@ -1,15 +1,11 @@
+import { IHeading } from "@/types/heading";
 import { Box, Heading, VStack } from "@chakra-ui/react";
-import { useLanguageContext } from "contexts/language";
-import { isIHeading } from "helpers/type-guards.helpers";
-import { ABOUT_LABELS } from "translations.constants";
 
-type PageTitleProps = {};
+type PageTitleProps = {
+  heading: IHeading;
+};
 
-const PageTitle: React.FC<PageTitleProps> = () => {
-  const { lang } = useLanguageContext();
-  const pageTrans = ABOUT_LABELS[lang].heading;
-  const heading = pageTrans && isIHeading(pageTrans) ? pageTrans : null;
-
+const PageTitle: React.FC<PageTitleProps> = ({ heading }) => {
   const colorLastWordOfTitle = (title: string) => {
     const titleElem = title.split(" ");
     if (titleElem.length > 1) {

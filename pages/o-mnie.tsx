@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { Flex, SimpleGrid } from "@chakra-ui/react";
 import { useLanguageContext } from "contexts/language";
-import { isISeo } from "helpers/type-guards.helpers";
+import { isIHeading, isISeo } from "helpers/type-guards.helpers";
 import { ABOUT_LABELS } from "translations.constants";
 
 import JobProfile from "@/components/JobProfile";
@@ -15,7 +15,9 @@ import Skills from "@/components/Skills";
 const AboutPL: NextPage = () => {
   const { lang } = useLanguageContext();
   const gSeoMeta = ABOUT_LABELS[lang].seo;
+  const pageTrans = ABOUT_LABELS[lang].heading;
   const seoMeta = isISeo(gSeoMeta) ? gSeoMeta : null;
+  const heading = pageTrans && isIHeading(pageTrans) ? pageTrans : null;
 
   return (
     <Layout>
@@ -30,7 +32,7 @@ const AboutPL: NextPage = () => {
           m="0 auto"
           direction="column"
         >
-          <PageTitle />
+          {heading && <PageTitle heading={heading} />}
           <SimpleGrid
             columns={{ base: 1, lg: 2 }}
             spacing="8"

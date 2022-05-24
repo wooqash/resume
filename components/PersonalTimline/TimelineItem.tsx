@@ -25,7 +25,9 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ element, index }) => {
   return (
     <VStack
       key={element.id}
-      textAlign="left"
+      textAlign={
+        isOdd ? { base: "left", lg: "right" } : { base: "left", lg: "left" }
+      }
       alignItems={
         isOdd
           ? { base: "flex-start", lg: "flex-end" }
@@ -74,7 +76,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ element, index }) => {
       >
         {isCompany ? element.position : element.direction}
       </Heading>
-      <Text textAlign={isOdd ? { lg: "right" } : "left"}>
+      <Text textAlign={isOdd ? { lg: "right" } : "left"} pt="2">
         {isCompany ? element.description : element.thesisTitle}
       </Text>
     </VStack>

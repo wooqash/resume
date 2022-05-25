@@ -34,8 +34,8 @@ const PageTitle: React.FC<PageTitleProps> = ({ heading }) => {
         <Heading
           as="h1"
           position={{ sm: "absolute" }}
-          top={{ sm: "40%" }}
-          fontSize={{ base: "2.18rem", sm: "3.5rem" }}
+          top={{ sm: "30%", lg: "40%" }}
+          fontSize={{ base: "2.18rem", sm: "3rem", md: "3.5rem" }}
           textAlign="center"
         >
           {colorLastWordOfTitle(heading.title)}
@@ -44,7 +44,7 @@ const PageTitle: React.FC<PageTitleProps> = ({ heading }) => {
           <Heading
             as="span"
             opacity="0.07"
-            fontSize="6.875rem"
+            fontSize={{ sm: "4rem", md: "5.5rem", lg: "6.875rem" }}
             display={{ base: "none", sm: "block" }}
           >
             {heading.shadowTitle}

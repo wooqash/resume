@@ -23,28 +23,19 @@ const AboutEN: NextPage = () => {
     <Layout>
       <>
         {seoMeta && <Seo meta={seoMeta} />}
-        <Flex
-          py={{ base: 20, lg: 12 }}
-          pl={{ base: 4, md: 4 }}
-          pr={{ base: 4, md: 28 }}
-          alignItems={{ base: "flex-start", sm: "center" }}
-          maxW="container.xl"
-          m="0 auto"
-          direction="column"
+
+        {heading && <PageTitle heading={heading} />}
+        <SimpleGrid
+          columns={{ base: 1, lg: 2 }}
+          spacing="8"
+          mb="16"
+          // px={{ base: 0, md: 4, lg: 8 }}
         >
-          {heading && <PageTitle heading={heading} />}
-          <SimpleGrid
-            columns={{ base: 1, lg: 2 }}
-            spacing="8"
-            mb="16"
-            // px={{ base: 0, md: 4, lg: 8 }}
-          >
-            <PersonalInfo />
-            <JobProfile />
-          </SimpleGrid>
-          <Skills />
-          <PersonalTimeline />
-        </Flex>
+          <PersonalInfo />
+          <JobProfile />
+        </SimpleGrid>
+        <Skills />
+        <PersonalTimeline />
       </>
     </Layout>
   );

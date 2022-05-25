@@ -1,5 +1,4 @@
 import Intro from "@/components/Intro";
-import Layout from "@/components/Layout";
 import IntroImage from "@/components/IntroImage";
 import Seo from "@/components/Seo";
 import { Box, Flex } from "@chakra-ui/react";
@@ -7,6 +6,7 @@ import { useLanguageContext } from "contexts/language";
 import { isISeo } from "helpers/type-guards.helpers";
 import type { NextPage } from "next";
 import { HOME_LABELS } from "translations.constants";
+import LayoutHP from "@/components/LayoutHP";
 
 const Home: NextPage = () => {
   const { lang } = useLanguageContext();
@@ -14,7 +14,7 @@ const Home: NextPage = () => {
   const seoMeta = isISeo(gSeoMeta) ? gSeoMeta : null;
 
   return (
-    <Layout>
+    <LayoutHP>
       <>
         {seoMeta && <Seo meta={seoMeta} />}
         {/* <h1>{lang === "pl" ? "Strona główna" : "Homepage"}</h1> */}
@@ -58,7 +58,7 @@ const Home: NextPage = () => {
         ></Box> */}
         {/* </Container> */}
       </>
-    </Layout>
+    </LayoutHP>
   );
 };
 

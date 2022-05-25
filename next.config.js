@@ -6,15 +6,18 @@ const nextConfig = {
   i18n: {
     // These are all the locales you want to support in
     // your application
-    locales: ['pl', 'en'],
+    locales: ["pl", "en"],
     // This is the default locale you want to be used when visiting
     // a non-locale prefixed path e.g. `/hello`
-    defaultLocale: 'pl',
+    defaultLocale: "pl",
     localeDetection: false,
   },
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
   },
-}
+  images: {
+    domains: ["picsum.photos"],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

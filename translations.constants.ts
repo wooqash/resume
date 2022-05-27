@@ -1,13 +1,14 @@
 import { IButton } from "./types/button.interface";
-import { IEducation } from "./types/education.interfacee";
+import { IEducation } from "./types/education.interface";
 import { IExperience } from "./types/experience.interface";
 import { IHeading } from "./types/heading";
 import { IconType } from "./types/icon.enum";
 import { IIntro } from "./types/intro.interface";
-import { IJobProfifle } from "./types/job-profile.interface";
+import { IJobProfile } from "./types/job-profile.interface";
 import { ILink, ILinkWithIcon } from "./types/link.interface";
 import { IMenu } from "./types/menu.interface";
 import { IPersonalInfo } from "./types/personal-info.interface";
+import { IPortfolio } from "./types/portfolio.interface";
 import { ISeo } from "./types/seo.interface";
 import { ISkills } from "./types/skills.interface";
 
@@ -17,11 +18,12 @@ interface ITranslations {
       | ISeo
       | IIntro
       | IHeading
-      | IJobProfifle
+      | IJobProfile
       | IPersonalInfo
       | ISkills
       | IExperience
       | IEducation
+      | IPortfolio
       | string
       | undefined;
   };
@@ -656,6 +658,48 @@ export const PORTFOLIO_LABELS: ITranslations = {
       // openGraph: '',
       // twitterCard: '',
     },
+    heading: {
+      title: "Portfolio",
+      shadowTitle: "Moje prace",
+    },
+    portfolio: {
+      productDetailsLabels: {
+        type: "Projekt",
+        technologies: "Technologie",
+        client: "Klient",
+        url: "Url",
+      },
+      projects: [
+        {
+          id: 1,
+          title: "AHB Finance",
+          details: {
+            type: "Strona www",
+            technologies: ["html5", "css3", "sass", "javascript", "typescript"],
+            client: "Aleksandra Hetmańska",
+            url: {
+              href: "https://ahb-finance.com",
+              label: "ahb-finance.com",
+              newTab: true,
+            },
+          },
+        },
+        {
+          id: 2,
+          title: "Carlife",
+          details: {
+            type: "Strona www",
+            technologies: ["html5", "css3", "sass", "javascript"],
+            client: "Piotr Cygulski",
+            url: {
+              href: "https://carlifecygulski.pl",
+              label: "carlifecygulski",
+              newTab: true,
+            },
+          },
+        },
+      ],
+    },
   },
   en: {
     seo: {
@@ -670,6 +714,10 @@ export const PORTFOLIO_LABELS: ITranslations = {
       // shareImage: '',
       // openGraph: '',
       // twitterCard: '',
+    },
+    heading: {
+      title: "Portfolio",
+      shadowTitle: "My works",
     },
   },
 };

@@ -4,7 +4,7 @@ import { ICompany, IExperience } from "@/types/experience.interface";
 import { IHeading } from "@/types/heading";
 import { IconType } from "@/types/icon.enum";
 import { IIntro } from "@/types/intro.interface";
-import { IJobProfifle } from "@/types/job-profile.interface";
+import { IJobProfile } from "@/types/job-profile.interface";
 import { ILink, ILinkWithIcon } from "@/types/link.interface";
 import { IMenu } from "@/types/menu.interface";
 import {
@@ -12,6 +12,7 @@ import {
   IPersonalInfoItem,
   PersonalInfoType,
 } from "@/types/personal-info.interface";
+import { IProject, IPortfolio } from "@/types/portfolio.interface";
 import { ISeo } from "@/types/seo.interface";
 import { ISkills, ISkillsGroup, ISkillsTypes } from "@/types/skills.interface";
 
@@ -89,7 +90,7 @@ export const isIHeading = (heading: any): heading is IHeading => {
   );
 };
 
-export const isIJobProfile = (jobProfile: any): jobProfile is IJobProfifle => {
+export const isIJobProfile = (jobProfile: any): jobProfile is IJobProfile => {
   return (
     typeof jobProfile.title === "string" && typeof jobProfile.text === "string"
   );
@@ -180,4 +181,27 @@ export const isISchool = (school: any): school is ISchool => {
 
 export const isIEducation = (education: any): education is IEducation => {
   return typeof education.title === "string" && isISchool(education.schools[0]);
+};
+
+export const isIProject = (project: any): project is IProject => {
+  return (
+    (typeof project.id === "string" || typeof project.id === "number") &&
+    typeof project.title === "string" &&
+    typeof project.details.type === "string" &&
+    Array.isArray(project.details.technologies) &&
+    typeof project.details.client === "string" &&
+    isILink(project.details.url)
+  );
+};
+
+export const isIPortfolio = (portfolio: any): portfolio is IPortfolio => {
+  return (
+    (typeof portfolio.title === "string" ||
+      typeof portfolio.title === "undefined") &&
+    typeof portfolio.productDetailsLabels.type === "string" &&
+    typeof portfolio.productDetailsLabels.technologies === "string" &&
+    typeof portfolio.productDetailsLabels.client === "string" &&
+    typeof portfolio.productDetailsLabels.url === "string" &&
+    isIProject(portfolio.projects[0])
+  );
 };

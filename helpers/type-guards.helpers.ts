@@ -6,6 +6,7 @@ import { IconType } from "@/types/icon.enum";
 import { IIntro } from "@/types/intro.interface";
 import { IJobProfile } from "@/types/job-profile.interface";
 import { ILink, ILinkWithIcon } from "@/types/link.interface";
+import { IMedia } from "@/types/media.interface";
 import { IMenu } from "@/types/menu.interface";
 import {
   IPersonalInfo,
@@ -205,3 +206,7 @@ export const isIPortfolio = (portfolio: any): portfolio is IPortfolio => {
     isIProject(portfolio.projects[0])
   );
 };
+
+// export const isIMedia = (media: any): media is IMedia => {
+//   return ()
+// };

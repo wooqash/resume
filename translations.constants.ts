@@ -682,6 +682,23 @@ export const PORTFOLIO_LABELS: ITranslations = {
               label: "ahb-finance.com",
               newTab: true,
             },
+            images: [
+              {
+                id: 1,
+                url: "https://picsum.photos/600/450?random=1",
+                ext: "webp",
+              },
+              {
+                id: 2,
+                url: "https://picsum.photos/600/450?random=2",
+                ext: "webp",
+              },
+            ],
+          },
+          mainImage: {
+            id: 1,
+            url: "https://picsum.photos/350/250?random=1",
+            ext: "webp",
           },
         },
         {
@@ -696,6 +713,11 @@ export const PORTFOLIO_LABELS: ITranslations = {
               label: "carlifecygulski",
               newTab: true,
             },
+          },
+          mainImage: {
+            id: 2,
+            url: "https://picsum.photos/350/250?random=2",
+            ext: "webp",
           },
         },
       ],

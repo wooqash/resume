@@ -82,6 +82,13 @@ const theme = extendTheme({
         variant: "brand",
       },
     },
+    Heading: {
+      variants: {
+        brand: (props: { colorMode: string }) => ({
+          color: props.colorMode === "dark" ? "teal.600" : "teal.400",
+        }),
+      },
+    },
   },
 });
 

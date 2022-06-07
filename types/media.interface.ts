@@ -23,6 +23,8 @@ export interface IMedia extends IImageInfo {
 
 export interface ISimpleImage {
   id: number | string;
+  width: number;
+  height: number;
   url: string;
   ext: string;
 }

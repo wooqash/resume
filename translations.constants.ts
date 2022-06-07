@@ -685,11 +685,15 @@ export const PORTFOLIO_LABELS: ITranslations = {
             images: [
               {
                 id: 1,
+                width: 650,
+                height: 400,
                 url: "https://picsum.photos/600/450?random=1",
                 ext: "webp",
               },
               {
                 id: 2,
+                width: 650,
+                height: 400,
                 url: "https://picsum.photos/600/450?random=2",
                 ext: "webp",
               },
@@ -697,6 +701,8 @@ export const PORTFOLIO_LABELS: ITranslations = {
           },
           mainImage: {
             id: 1,
+            width: 350,
+            height: 250,
             url: "https://picsum.photos/350/250?random=1",
             ext: "webp",
           },
@@ -716,6 +722,8 @@ export const PORTFOLIO_LABELS: ITranslations = {
           },
           mainImage: {
             id: 2,
+            width: 350,
+            height: 250,
             url: "https://picsum.photos/350/250?random=2",
             ext: "webp",
           },

@@ -1,5 +1,9 @@
 import { ILink } from "@/types/link.interface";
-import { Box, List, ListItem, useColorMode } from "@chakra-ui/react";
+import { Box, Icon, List, ListItem, useColorMode } from "@chakra-ui/react";
+import { HiDocument, HiOutlineCode, HiOutlineGlobeAlt } from "react-icons/hi";
+import { FiUser } from "react-icons/fi";
+import ListWithTechnicalIcons from "../ListWithTechnicalIcons";
+import CustomLink from "../CustomLink";
 
 type ProjectDetailsListProps = {
   details: { type: string; technologies: string[]; client: string; url: ILink };
@@ -12,7 +16,7 @@ const ProjectDetailsList: React.FC<ProjectDetailsListProps> = ({
 }) => {
   const { colorMode } = useColorMode();
   return (
-    <List display="flex" flexWrap="wrap" mt="0" w="100%">
+    <List display="flex" flexWrap="wrap" w="100%" mb="8">
       <ListItem
         flex={{ sm: "0 0 50%" }}
         maxW={{ sm: "50%" }}
@@ -27,7 +31,8 @@ const ProjectDetailsList: React.FC<ProjectDetailsListProps> = ({
           display="flex"
           alignItems="center"
         >
-          {labels.type}
+          <Icon as={HiDocument} mr="1" />
+          {labels.type}:
         </Box>
         <Box as="span" fontWeight="bold" display="block">
           {details.type}
@@ -47,7 +52,8 @@ const ProjectDetailsList: React.FC<ProjectDetailsListProps> = ({
           display="flex"
           alignItems="center"
         >
-          {labels.client}
+          <Icon as={FiUser} mr="1" />
+          {labels.client}:
         </Box>
         <Box as="span" fontWeight="bold" display="block">
           {details.client}
@@ -67,13 +73,14 @@ const ProjectDetailsList: React.FC<ProjectDetailsListProps> = ({
           display="flex"
           alignItems="center"
         >
-          {labels.technologies}
+          <Icon as={HiOutlineCode} mr="1" />
+          {labels.technologies}:
         </Box>
-        <Box as="span" fontWeight="bold" display="block">
-          {details.technologies.map((technology) => {
-            return technology + ",";
-          })}
-        </Box>
+        {details.technologies && (
+          <Box fontSize="bold">
+            <ListWithTechnicalIcons collection={details.technologies} />
+          </Box>
+        )}
       </ListItem>
       <ListItem
         flex={{ sm: "0 0 50%" }}
@@ -89,10 +96,17 @@ const ProjectDetailsList: React.FC<ProjectDetailsListProps> = ({
           display="flex"
           alignItems="center"
         >
-          {labels.url}
+          <Icon as={HiOutlineGlobeAlt} mr="1" />
+          {labels.url}:
         </Box>
-        <Box as="span" fontWeight="bold" display="block">
-          {details.url.href}
+        <Box
+          as="span"
+          fontWeight="bold"
+          display="block"
+          textDecoration="underline"
+        >
+          <CustomLink link={details.url}>{details.url.href}</CustomLink>
+          {/* {details.url.href} */}
         </Box>
       </ListItem>
     </List>

@@ -1,0 +1,62 @@
+.swiper {
+  padding-bottom: 40px;
+}
+
+.swiper-slide img {
+  border-radius: var(--chakra-radii-md);
+}
+
+.swiper-pagination-bullet {
+  width: var(
+    --swiper-pagination-bullet-width,
+    var(--swiper-pagination-bullet-size, 8px)
+  );
+  height: var(
+    --swiper-pagination-bullet-height,
+    var(--swiper-pagination-bullet-size, 8px)
+  );
+  display: inline-block;
+  border-radius: 50%;
+  background: var(--chakra-colors-teal-200);
+  opacity: var(--swiper-pagination-bullet-inactive-opacity, 0.2);
+}
+
+.swiper-pagination-bullet-active {
+  opacity: var(--swiper-pagination-bullet-opacity, 1);
+  background: var(--swiper-pagination-color, var(--chakra-colors-teal-600));
+}
+.swiper-button-prev,
+.swiper-button-next {
+  top: auto;
+  bottom: 0;
+  z-index: 11;
+}
+
+.swiper-button-prev {
+  &:after {
+    content: url(../public/icons/chevron-circle-left.svg);
+  }
+  &:hover {
+    &:after {
+      content: url(../public/icons/chevron-circle-left-active.svg);
+    }
+  }
+  left: 0px;
+}
+.swiper-button-next {
+  &:after {
+    content: url(../public/icons/chevron-circle-right.svg);
+  }
+  &:hover {
+    &:after {
+      content: url(../public/icons/chevron-circle-right-active.svg);
+    }
+  }
+  right: 0px;
+}
+
+// .swiper-button-next:hover{
+//     &:after {
+//         content: url(../public/icons/chevron-circle-right-active.svg);
+//     }
+// }

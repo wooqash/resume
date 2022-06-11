@@ -29,7 +29,7 @@ const SwiperCarousel: React.FC<SwiperCarouselProps> = ({
       loop={loop}
       navigation={nav}
       pagination={pagination && { clickable: true }}
-      autoplay={autoplay && { delay: 5000 }}
+      autoplay={autoplay && { delay: 5000, disableOnInteraction: false }}
     >
       {newChildren}
     </Swiper>

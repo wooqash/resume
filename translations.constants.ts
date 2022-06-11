@@ -846,6 +846,35 @@ export const PORTFOLIO_LABELS: ITranslations = {
           },
         },
       ],
+      recommendations: {
+        title: "Recommendations",
+        references: [
+          {
+            id: 1,
+            client: "Carlife",
+            text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum, animi debitis! Repellendus quibusdam harum ullam eos dignissimos impedit hic officiis. Et itaque eligendi, commodi magnam eveniet mollitia expedita aliquam eius!",
+            image: {
+              id: 1,
+              width: 200,
+              height: 200,
+              url: "https://picsum.photos/200/200?random=3",
+              ext: "webp",
+            },
+          },
+          {
+            id: 2,
+            client: "Hetmanska",
+            text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum, animi debitis! Repellendus quibusdam harum ullam eos dignissimos impedit hic officiis. Et itaque eligendi, commodi magnam eveniet mollitia expedita aliquam eius!",
+            image: {
+              id: 1,
+              width: 100,
+              height: 100,
+              url: "https://picsum.photos/100/100?random=4",
+              ext: "webp",
+            },
+          },
+        ],
+      },
     },
   },
 };

@@ -1,3 +1,4 @@
+import { localStorageManager } from "@chakra-ui/react";
 import { IButton } from "./types/button.interface";
 import { IEducation } from "./types/education.interface";
 import { IExperience } from "./types/experience.interface";
@@ -663,7 +664,7 @@ export const PORTFOLIO_LABELS: ITranslations = {
       shadowTitle: "Moje prace",
     },
     portfolio: {
-      productDetailsLabels: {
+      projectDetailsLabels: {
         type: "Projekt",
         technologies: "Technologie",
         client: "Klient",
@@ -729,6 +730,35 @@ export const PORTFOLIO_LABELS: ITranslations = {
           },
         },
       ],
+      recommendations: {
+        title: "Rekomendacje",
+        references: [
+          {
+            id: 1,
+            client: "Carlife",
+            text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum, animi debitis! Repellendus quibusdam harum ullam eos dignissimos impedit hic officiis. Et itaque eligendi, commodi magnam eveniet mollitia expedita aliquam eius!",
+            image: {
+              id: 1,
+              width: 200,
+              height: 200,
+              url: "https://picsum.photos/200/200?random=3",
+              ext: "webp",
+            },
+          },
+          {
+            id: 2,
+            client: "Hetmanska",
+            text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum, animi debitis! Repellendus quibusdam harum ullam eos dignissimos impedit hic officiis. Et itaque eligendi, commodi magnam eveniet mollitia expedita aliquam eius!",
+            image: {
+              id: 1,
+              width: 100,
+              height: 100,
+              url: "https://picsum.photos/100/100?random=4",
+              ext: "webp",
+            },
+          },
+        ],
+      },
     },
   },
   en: {
@@ -748,6 +778,74 @@ export const PORTFOLIO_LABELS: ITranslations = {
     heading: {
       title: "Portfolio",
       shadowTitle: "My works",
+    },
+    portfolio: {
+      projectDetailsLabels: {
+        type: "Project",
+        technologies: "Technologies",
+        client: "Client",
+        url: "Url",
+      },
+      projects: [
+        {
+          id: 1,
+          title: "AHB Finance",
+          details: {
+            type: "Website",
+            technologies: ["html5", "css3", "sass", "javascript", "typescript"],
+            client: "Aleksandra Hetmańska",
+            url: {
+              href: "https://ahb-finance.com",
+              label: "ahb-finance.com",
+              newTab: true,
+            },
+            images: [
+              {
+                id: 1,
+                width: 650,
+                height: 400,
+                url: "https://picsum.photos/600/450?random=1",
+                ext: "webp",
+              },
+              {
+                id: 2,
+                width: 650,
+                height: 400,
+                url: "https://picsum.photos/600/450?random=2",
+                ext: "webp",
+              },
+            ],
+          },
+          mainImage: {
+            id: 1,
+            width: 350,
+            height: 250,
+            url: "https://picsum.photos/350/250?random=1",
+            ext: "webp",
+          },
+        },
+        {
+          id: 2,
+          title: "Carlife",
+          details: {
+            type: "Website",
+            technologies: ["html5", "css3", "sass", "javascript"],
+            client: "Piotr Cygulski",
+            url: {
+              href: "https://carlifecygulski.pl",
+              label: "carlifecygulski",
+              newTab: true,
+            },
+          },
+          mainImage: {
+            id: 2,
+            width: 350,
+            height: 250,
+            url: "https://picsum.photos/350/250?random=2",
+            ext: "webp",
+          },
+        },
+      ],
     },
   },
 };

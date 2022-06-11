@@ -17,13 +17,19 @@
   );
   display: inline-block;
   border-radius: 50%;
-  background: var(--chakra-colors-teal-200);
-  opacity: var(--swiper-pagination-bullet-inactive-opacity, 0.2);
+  background: var(--chakra-colors-gray-200);
+  [data-theme="dark"] & {
+    background: var(--chakra-colors-whiteAlpha-300);
+  }
+  opacity: var(--swiper-pagination-bullet-inactive-opacity, 0.8);
 }
 
 .swiper-pagination-bullet-active {
   opacity: var(--swiper-pagination-bullet-opacity, 1);
   background: var(--swiper-pagination-color, var(--chakra-colors-teal-600));
+  [data-theme="dark"] & {
+    background: var(--swiper-pagination-color, var(--chakra-colors-teal-600));
+  }
 }
 .swiper-button-prev,
 .swiper-button-next {

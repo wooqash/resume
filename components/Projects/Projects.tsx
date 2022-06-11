@@ -18,20 +18,16 @@ import { PORTFOLIO_LABELS } from "translations.constants";
 import { useLanguageContext } from "contexts/language";
 import ProjectDetailsList from "./ProjectDetailsList";
 import SwiperCarousel from "../SwiperCarousel";
+import Recommendations from "../Recommendations";
 
 type ProjectsProps = {};
 
 const Projects: React.FC<ProjectsProps> = () => {
   const { lang } = useLanguageContext();
-
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const pageTransPortfolio = PORTFOLIO_LABELS[lang].portfolio;
-
-  const portfolio =
-    pageTransPortfolio && isIPortfolio(pageTransPortfolio)
-      ? pageTransPortfolio
-      : null;
+  const tPortfolio = PORTFOLIO_LABELS[lang].portfolio;
+  const portfolio = tPortfolio && isIPortfolio(tPortfolio) ? tPortfolio : null;
 
   const [projectId, setProjectId] = useState<string | number | null>(null);
   const selectedProject = portfolio?.projects.find(
@@ -125,6 +121,9 @@ const Projects: React.FC<ProjectsProps> = () => {
           })}
         </SimpleGrid>
       )}
+      {portfolio?.recommendations && (
+        <Recommendations recommendations={portfolio?.recommendations} />
+      )}
       {selectedProject && (
         <Modal isOpen={isOpen} onClose={onClose} size="2xl">
           <ModalOverlay />
@@ -138,7 +137,7 @@ const Projects: React.FC<ProjectsProps> = () => {
             <ModalBody>
               {portfolio && (
                 <ProjectDetailsList
-                  labels={portfolio?.productDetailsLabels}
+                  labels={portfolio?.projectDetailsLabels}
                   details={selectedProject.details}
                 />
               )}

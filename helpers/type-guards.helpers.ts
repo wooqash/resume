@@ -6,14 +6,19 @@ import { IconType } from "@/types/icon.enum";
 import { IIntro } from "@/types/intro.interface";
 import { IJobProfile } from "@/types/job-profile.interface";
 import { ILink, ILinkWithIcon } from "@/types/link.interface";
-import { IMedia } from "@/types/media.interface";
+import { IMedia, ISimpleImage } from "@/types/media.interface";
 import { IMenu } from "@/types/menu.interface";
 import {
   IPersonalInfo,
   IPersonalInfoItem,
   PersonalInfoType,
 } from "@/types/personal-info.interface";
-import { IProject, IPortfolio } from "@/types/portfolio.interface";
+import {
+  IProject,
+  IPortfolio,
+  IRecommendation,
+  IReference,
+} from "@/types/portfolio.interface";
 import { ISeo } from "@/types/seo.interface";
 import { ISkills, ISkillsGroup, ISkillsTypes } from "@/types/skills.interface";
 
@@ -188,10 +193,34 @@ export const isIProject = (project: any): project is IProject => {
   return (
     (typeof project.id === "string" || typeof project.id === "number") &&
     typeof project.title === "string" &&
+    isISimpleImage(project.mainImage) &&
     typeof project.details.type === "string" &&
     Array.isArray(project.details.technologies) &&
     typeof project.details.client === "string" &&
-    isILink(project.details.url)
+    isILink(project.details.url) &&
+    (typeof project.details.images === "undefined" ||
+      (Array.isArray(project.details.images) &&
+        isISimpleImage(project.details.images[0])))
+  );
+};
+
+export const isIReference = (reference: any): reference is IReference => {
+  return (
+    (typeof reference.id === "string" || typeof reference.id === "number") &&
+    typeof reference.client === "string" &&
+    typeof reference.text === "string" &&
+    (typeof reference.image === "undefined" || isISimpleImage(reference.image))
+  );
+};
+
+export const isIRecommendation = (
+  recommendation: any
+): recommendation is IRecommendation => {
+  return (
+    (typeof recommendation.title === "string" ||
+      typeof recommendation.title === "undefined") &&
+    Array.isArray(recommendation.references) &&
+    isIReference(recommendation.references[0])
   );
 };
 
@@ -199,11 +228,23 @@ export const isIPortfolio = (portfolio: any): portfolio is IPortfolio => {
   return (
     (typeof portfolio.title === "string" ||
       typeof portfolio.title === "undefined") &&
-    typeof portfolio.productDetailsLabels.type === "string" &&
-    typeof portfolio.productDetailsLabels.technologies === "string" &&
-    typeof portfolio.productDetailsLabels.client === "string" &&
-    typeof portfolio.productDetailsLabels.url === "string" &&
-    isIProject(portfolio.projects[0])
+    typeof portfolio.projectDetailsLabels.type === "string" &&
+    typeof portfolio.projectDetailsLabels.technologies === "string" &&
+    typeof portfolio.projectDetailsLabels.client === "string" &&
+    typeof portfolio.projectDetailsLabels.url === "string" &&
+    Array.isArray(portfolio.projects) &&
+    isIProject(portfolio.projects[0]) &&
+    isIRecommendation(portfolio.recommendations)
+  );
+};
+
+export const isISimpleImage = (image: any): image is ISimpleImage => {
+  return (
+    (typeof image.id === "string" || typeof image.id === "number") &&
+    typeof image.width === "number" &&
+    typeof image.height === "number" &&
+    typeof image.url === "string" &&
+    typeof image.ext === "string"
   );
 };
 

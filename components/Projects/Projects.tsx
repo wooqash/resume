@@ -8,10 +8,10 @@ import {
   ModalBody,
   ModalCloseButton,
   ModalContent,
-  ModalFooter,
   ModalHeader,
   ModalOverlay,
   SimpleGrid,
+  useColorMode,
   useDisclosure,
 } from "@chakra-ui/react";
 import { PORTFOLIO_LABELS } from "translations.constants";
@@ -19,10 +19,12 @@ import { useLanguageContext } from "contexts/language";
 import ProjectDetailsList from "./ProjectDetailsList";
 import SwiperCarousel from "../SwiperCarousel";
 import Recommendations from "../Recommendations";
+import Repositories from "./Repositories";
 
 type ProjectsProps = {};
 
 const Projects: React.FC<ProjectsProps> = () => {
+  const { colorMode } = useColorMode();
   const { lang } = useLanguageContext();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -55,7 +57,7 @@ const Projects: React.FC<ProjectsProps> = () => {
   return (
     <>
       {portfolio?.projects && (
-        <SimpleGrid minChildWidth="250px" spacing="40px" w="100%">
+        <SimpleGrid minChildWidth="250px" spacing="40px" w="100%" mb="16">
           {portfolio?.projects.map((project) => {
             return (
               <Box
@@ -68,7 +70,9 @@ const Projects: React.FC<ProjectsProps> = () => {
                 overflow="hidden"
                 position="relative"
                 _before={{
-                  background: "teal.600",
+                  background: `${
+                    colorMode === "dark" ? "teal.400" : "teal.600"
+                  }`,
                   content: `""`,
                   height: "100%",
                   left: 0,
@@ -99,6 +103,7 @@ const Projects: React.FC<ProjectsProps> = () => {
                 />
                 <Box
                   as="span"
+                  color={colorMode === "dark" ? "gray.800" : "whiteAlpha.900"}
                   fontFamily="heading"
                   left="0"
                   letterSpacing="2px"
@@ -120,6 +125,9 @@ const Projects: React.FC<ProjectsProps> = () => {
             );
           })}
         </SimpleGrid>
+      )}
+      {portfolio?.repositories.title && (
+        <Repositories labels={portfolio?.repositories} />
       )}
       {portfolio?.recommendations && (
         <Recommendations recommendations={portfolio?.recommendations} />

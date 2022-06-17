@@ -1,5 +1,12 @@
 import { IRecommendation } from "@/types/portfolio.interface";
-import { Avatar, Box, Flex, Text, VStack } from "@chakra-ui/react";
+import {
+  Avatar,
+  Box,
+  Flex,
+  Text,
+  useColorMode,
+  VStack,
+} from "@chakra-ui/react";
 import BoxHeader from "../BoxHeader";
 import SwiperCarousel from "../SwiperCarousel";
 
@@ -10,21 +17,29 @@ type RecommendationsProps = {
 const Recommendations: React.FC<RecommendationsProps> = ({
   recommendations,
 }) => {
+  const { colorMode } = useColorMode();
   const { title, references } = recommendations;
 
   const referencesToShow = references.map((reference) => (
     <VStack textAlign="center" mb="4" key={reference.id}>
       {reference.image && (
-        <Avatar
-          src={reference.image.url}
-          name=""
-          size="lg"
-          overflow="hidden"
+        <Box
+          as="span"
+          border="4px solid"
+          borderColor={colorMode === "dark" ? "teal.400" : "teal.600"}
+          borderRadius="full"
           my="4"
-        ></Avatar>
+        >
+          <Avatar
+            src={reference.image.url}
+            name=""
+            size="lg"
+            overflow="hidden"
+          ></Avatar>
+        </Box>
       )}
       <Text mb="6">{reference.text}</Text>
-      <Text>{reference.client}</Text>
+      <Text variant="brand">{reference.client}</Text>
     </VStack>
   ));
   return (

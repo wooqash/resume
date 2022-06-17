@@ -27,13 +27,18 @@ const theme = extendTheme({
       parts: ["track", "thumb"],
       baseStyle: (props: { colorMode: string }) => ({
         track: {
-          background: "teal.600",
+          background:
+            props.colorMode === "dark" ? "whiteAlpha.900" : "gray.800",
           _focus: {
             boxShadow: "0 0 0 3px rgba(93,202,208, 0.6)",
           },
+          _checked: {
+            background:
+              props.colorMode === "dark" ? "whiteAlpha.900" : "gray.800",
+          },
         },
         thumb: {
-          background: props.colorMode === "dark" ? "teal.600" : "teal.300",
+          background: props.colorMode === "dark" ? "teal.600" : "teal.400",
         },
       }),
     },
@@ -45,15 +50,15 @@ const theme = extendTheme({
       },
       variants: {
         brand: (props: { colorMode: string }) => ({
-          bg: "teal.600",
+          bg: props.colorMode === "dark" ? "teal.400" : "teal.600",
           color: props.colorMode === "dark" ? "gray.800" : "gray.200",
           letterSpacing: "1px",
           _hover: {
-            bg: "teal.700",
+            bg: props.colorMode === "dark" ? "teal.600" : "teal.800",
           },
           _focus: {
-            bg: "teal.700",
-            outlineColor: "teal.400",
+            bg: props.colorMode === "dark" ? "teal.600" : "teal.800",
+            outlineColor: props.colorMode === "dark" ? "teal.200" : "teal.400",
           },
         }),
       },
@@ -85,7 +90,14 @@ const theme = extendTheme({
     Heading: {
       variants: {
         brand: (props: { colorMode: string }) => ({
-          color: props.colorMode === "dark" ? "teal.600" : "teal.400",
+          color: props.colorMode === "dark" ? "teal.400" : "teal.700",
+        }),
+      },
+    },
+    Text: {
+      variants: {
+        brand: (props: { colorMode: string }) => ({
+          color: props.colorMode === "dark" ? "teal.400" : "teal.700",
         }),
       },
     },

@@ -1,7 +1,7 @@
 import Intro from "@/components/Intro";
 import IntroImage from "@/components/IntroImage";
 import Seo from "@/components/Seo";
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, Flex, useColorMode } from "@chakra-ui/react";
 import { useLanguageContext } from "contexts/language";
 import { isISeo } from "helpers/type-guards.helpers";
 import type { NextPage } from "next";
@@ -10,6 +10,7 @@ import LayoutHP from "@/components/LayoutHP";
 
 const Home: NextPage = () => {
   const { lang } = useLanguageContext();
+  const { colorMode } = useColorMode();
   const gSeoMeta = HOME_LABELS[lang].seo;
   const seoMeta = isISeo(gSeoMeta) ? gSeoMeta : null;
 
@@ -26,7 +27,7 @@ const Home: NextPage = () => {
           transform="rotate(15deg)"
           left="-83%"
           top="-50%"
-          backgroundColor="teal.600"
+          backgroundColor={colorMode === "dark" ? "teal.400" : "teal.600"}
           zIndex="0"
           d={{ base: "none", lg: "block" }}
         ></Box>

@@ -87,7 +87,7 @@ const PersonalInfo: React.FC<PersonalInfoProps> = () => {
                   as="span"
                   mr="1"
                   textTransform="capitalize"
-                  color={colorMode === "dark" ? "teal.200" : "teal.700"}
+                  color={colorMode === "dark" ? "teal.400" : "teal.700"}
                   display="flex"
                   alignItems="center"
                 >

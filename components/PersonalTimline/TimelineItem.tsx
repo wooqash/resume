@@ -54,7 +54,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ element, index }) => {
             ? { base: "-10px", lg: "-8.5%" }
             : { base: "-10px", lg: "auto" }
         }
-        color="teal.600"
+        color={colorMode === "dark" ? "teal.400" : "teal.700"}
         zIndex="2"
       />
       <Heading
@@ -67,7 +67,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ element, index }) => {
       </Heading>
       <Heading
         as="h4"
-        color={colorMode === "dark" ? "teal.200" : "teal.700"}
+        color={colorMode === "dark" ? "teal.400" : "teal.700"}
         fontSize={{ base: ".9rem", lg: "1rem" }}
         textTransform="capitalize"
         fontFamily="body"

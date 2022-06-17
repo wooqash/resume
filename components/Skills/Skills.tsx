@@ -44,7 +44,7 @@ const Skills: React.FC<SkillsProps> = () => {
                             <Heading
                               as="h4"
                               color={
-                                colorMode === "dark" ? "teal.200" : "teal.700"
+                                colorMode === "dark" ? "teal.400" : "teal.700"
                               }
                               fontSize={{ base: ".9rem", lg: "1rem" }}
                               textTransform="capitalize"

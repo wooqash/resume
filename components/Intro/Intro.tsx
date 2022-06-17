@@ -1,5 +1,13 @@
 import NextLink from "next/link";
-import { Heading, VStack, Text, Button, Icon, Box } from "@chakra-ui/react";
+import {
+  Heading,
+  VStack,
+  Text,
+  Button,
+  Icon,
+  Box,
+  useColorMode,
+} from "@chakra-ui/react";
 import { FiArrowRight } from "react-icons/fi";
 import { useLanguageContext } from "contexts/language";
 import { HOME_LABELS } from "translations.constants";
@@ -8,6 +16,7 @@ type IntroProps = {};
 
 const Intro: React.FC<IntroProps> = (props) => {
   const { lang } = useLanguageContext();
+  const { colorMode } = useColorMode();
   const pageTrans = HOME_LABELS[lang].intro;
   const intro = pageTrans && isIIntro(pageTrans) ? pageTrans : null;
 
@@ -28,7 +37,10 @@ const Intro: React.FC<IntroProps> = (props) => {
           {intro?.title && (
             <Heading textTransform="uppercase">
               {intro?.titlePrefix && (
-                <Box as="p" color="teal.600">
+                <Box
+                  as="p"
+                  color={colorMode === "dark" ? "teal.400" : "teal.600"}
+                >
                   {intro?.titlePrefix}
                 </Box>
               )}

@@ -1,11 +1,12 @@
 import { IHeading } from "@/types/heading";
-import { Box, Heading, VStack } from "@chakra-ui/react";
+import { Box, Heading, useColorMode, VStack } from "@chakra-ui/react";
 
 type PageTitleProps = {
   heading: IHeading;
 };
 
 const PageTitle: React.FC<PageTitleProps> = ({ heading }) => {
+  const { colorMode } = useColorMode();
   const colorLastWordOfTitle = (title: string) => {
     const titleElem = title.split(" ");
     if (titleElem.length > 1) {
@@ -14,7 +15,7 @@ const PageTitle: React.FC<PageTitleProps> = ({ heading }) => {
       return (
         <>
           {wordsWithoutColor}{" "}
-          <Box as="span" color="teal.600">
+          <Box as="span" color={colorMode === "dark" ? "teal.400" : "teal.700"}>
             {wordToColor}
           </Box>
         </>

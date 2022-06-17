@@ -35,19 +35,6 @@ const Navbar: React.FC<NavbarProps> = () => {
   const [scrollTopButtonAnimation, setScrollTopButtonAnimation] =
     useState(false);
 
-  useEffect(() => {
-    runNavAnimation();
-    setStickyBottomNav();
-    setVisiblityScrollDownButton();
-    window.addEventListener("scroll", setStickyOnScroll);
-    window.addEventListener("resize", refreshNavAnimation);
-
-    return () => {
-      window.removeEventListener("scroll", setStickyOnScroll);
-      window.removeEventListener("resize", refreshNavAnimation);
-    };
-  }, []);
-
   const onScrollDownHandle = () => {
     if (window) {
       window.scrollTo(0, window.innerHeight);
@@ -119,6 +106,19 @@ const Navbar: React.FC<NavbarProps> = () => {
     setStickyBottomNav();
     runNavAnimation();
   };
+
+  useEffect(() => {
+    runNavAnimation();
+    setStickyBottomNav();
+    setVisiblityScrollDownButton();
+    window.addEventListener("scroll", setStickyOnScroll);
+    window.addEventListener("resize", refreshNavAnimation);
+
+    return () => {
+      window.removeEventListener("scroll", setStickyOnScroll);
+      window.removeEventListener("resize", refreshNavAnimation);
+    };
+  }, [refreshNavAnimation]);
 
   return (
     <nav>

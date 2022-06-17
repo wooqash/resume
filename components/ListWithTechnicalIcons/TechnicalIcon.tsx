@@ -118,7 +118,6 @@ const TechnicalIcon: React.FC<TechnicalIconProps> = ({ name }) => {
           />
         );
       default:
-        let x: never = type;
         return;
     }
   };

@@ -759,6 +759,11 @@ export const PORTFOLIO_LABELS: ITranslations = {
           },
         ],
       },
+      repositories: {
+        title: "5 ostatnich projektów z Githuba",
+        projectNameLabel: "Nazwa projektu",
+        lastUpdateLabel: "Ostatnia aktualizacja",
+      },
     },
   },
   en: {
@@ -874,6 +879,11 @@ export const PORTFOLIO_LABELS: ITranslations = {
             },
           },
         ],
+      },
+      repositories: {
+        title: "The last 5 Github repositories",
+        projectNameLabel: "Project name",
+        lastUpdateLabel: "Last update",
       },
     },
   },

@@ -234,7 +234,10 @@ export const isIPortfolio = (portfolio: any): portfolio is IPortfolio => {
     typeof portfolio.projectDetailsLabels.url === "string" &&
     Array.isArray(portfolio.projects) &&
     isIProject(portfolio.projects[0]) &&
-    isIRecommendation(portfolio.recommendations)
+    isIRecommendation(portfolio.recommendations) &&
+    typeof portfolio.repositories.title === "string" &&
+    typeof portfolio.repositories.projectNameLabel === "string" &&
+    typeof portfolio.repositories.lastUpdateLabel === "string"
   );
 };
 

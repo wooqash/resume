@@ -26,6 +26,12 @@ export interface IRecommendation {
   references: IReference[];
 }
 
+export interface IRepositories {
+  title: string;
+  projectNameLabel: string;
+  lastUpdateLabel: string;
+}
+
 export interface IPortfolio {
   title?: string;
   projectDetailsLabels: {
@@ -36,4 +42,5 @@ export interface IPortfolio {
   };
   projects: IProject[];
   recommendations: IRecommendation;
+  repositories: IRepositories;
 }
